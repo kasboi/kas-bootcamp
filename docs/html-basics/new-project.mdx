@@ -1,0 +1,93 @@
+# New Project
+
+## HTML ?
+
+HTML - HyperText Markup Language
+
+### HyperText
+
+When you think of the website, it is a bunch of pages interconnected via links. Hypertext refers to text that links to other texts or resources. Unlike regular text, hypertext can contain clickable links (usually called hyperlinks) that take you to other pages, sections, or resources when you click them
+
+**Example:**
+[Clicking this link will take you to Google](https://www.google.com)
+
+This link is an example of an hypertext
+
+### Markup
+
+Markup refers to special tags used to structure, format, and display content on a webpage. It doesn't show up in the final webpage directly but instead tells the browser how to arrange and display the content. In HTML, we use markup tags like `<h1>`, `<p>`, and `<img>` to define things like headings, paragraphs, and images.
+
+### Language
+
+A language is a communicatool tool and in this case, we use HTML to describe the contents we want to display using various markups.
+
+**NOTE:** HTML is **NOT** a programming language
+
+## Starting a new project
+
+:::note[live server]
+Ensure you have installed the live server extension before proceeding. You should see `Go Live` text at the bottom panel if it was successfully installed.
+:::
+
+It's great to have one central location for all the projects we would be handling in this bootcamp. You can follow my steps to ensure consistency
+
+1. Create a new folder in the `Documents` folder and give it any suitable name - `projects`, `bootcamp` etc.
+
+    :::info
+    If you are using multiple words for your project name such as `my project`, try to use underscore between the words i.e `my_project`
+    :::
+
+2. Create a folder `html_basics` in the newly created folder
+3. Open VS Code
+4. Open the `html_basics` folder in the code editor
+5. type ! and generate boiler html code, this is power of Emmet, a built in vs code tool for fast code generation using shortcuts. briefly explain what Emmet is and show them the web page. notice that it is still blank but the title of the tab has changed.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+```
+
+6. Boiler code line by line:
+    1. `<!DOCTYPE html>` declares to the browser that the document is HTML and should be treated as such. These are tags btw, they tell the browser how to treat anything enclosed in angle brackets
+    2. `<html lang="en">` declaration of language, ever been on a page and you get a prompt saying this page is in german, want to translate?, yup this little thing determines that.
+    3. `<meta charset="UTF-8">` :
+        - `<meta>` is a HTML tag that contains metadata about a web page, or more specifically, descriptors that tell search engines what type of content a web page contains that is hidden from display.
+        - `charset` is an HTML attribute that defines the character encoding for your browser to use when displaying the website content.
+        - `utf-8` is a specific character encoding that covers a lot of characters, letters and symbols. Without it, characters might show up weirdly for example, instead of showing "Bonjour, ça va?" (French) or "你好" (Chinese), the browser could display something like "Bonjour, Ã§a va?" or "???" because it doesn't know how to handle these characters.
+    4. `title` specifies the title of the document e.g About me, contact us.
+    5. `body` - Now this is where all the contents we want to display on the webpage are inserted
+7. `html`, `meta`, `title`, `body` are called HTML tags
+8. HTML elements are everything from the start tag to the end tag
+
+```html
+<tagname>Content goes here...</tagname>
+<!-- An example of HTML element -->
+<title>Bootcamp C5</title>
+```
+
+9. HTML Attributes: These provide additional information about HTML elements.
+
+```html
+<!-- First example -->
+<html lang="en"></html>
+
+<!-- Second example -->
+<meta charset="UTF-8" />
+```
+
+In the first example, `lang=en` is an attibute specifying that our HTML document is written in english.
+
+The second example instructs the browser on the character set to be used
+
+Notice how with everything done and changed, nothing appears on the web page except for the title of the tab.
+
+:::tip
+Click on view and toggle `Word Wrap` to prevent text from horizontal overflow
+:::
