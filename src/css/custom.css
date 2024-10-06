@@ -26,3 +26,9 @@
   --ifm-color-primary-lightest: #A19BFF;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1); /* Lighter background for highlighted code lines in dark mode */
 }
+
+/* Enable word wrapping in code blocks */
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
