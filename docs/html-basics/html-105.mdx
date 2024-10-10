@@ -153,7 +153,8 @@ Form inputs are used to specify the type of data to be collected ranging from te
     <div class="form-class">
         <p>Which option best describes your current role?</p>
         <select name="dropdwon" id="dropdown" class="form_input">
-            <option value="role" disabled selected>Select your role</option>
+            <!-- The first option should have an emtpy value for the required attribute to work -->
+            <option value="" disabled selected>Select your role</option>
             <option value="student">Student</option>
             <option value="full-time">Full-time</option>
             <option value="part-time">Part-time</option>
@@ -400,7 +401,8 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
         <div class="form-class">
             <p>Which option best describes your current role?</p>
             <select name="dropdwon" id="dropdown" class="form_input">
-                <option value="role" disabled selected>Select your role</option>
+                <!-- The first option should have an emtpy value for the required attribute to work -->
+                <option value="" disabled selected>Select your role</option>
                 <option value="student">Student</option>
                 <option value="full-time">Full-time</option>
                 <option value="part-time">Part-time</option>
@@ -443,7 +445,7 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
         <div class="form-class">
             <p>What is your favourite feature of CareerConnects?</p>
             <select name="dropdown" id="dropdown" class="form_input">
-                <option value="role" disabled selected>Pick one</option>
+                <option value="" disabled selected>Pick one</option>
                 <option value="challenges">challenges</option>
                 <option value="projects">projects</option>
                 <option value="community">community</option>
@@ -575,7 +577,7 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
             <div class="form-class">
                 <p>Which option best describes your current role?</p>
                 <select name="dropdwon" id="dropdown" class="form_input">
-                    <option value="role" disabled selected>
+                    <option value="" disabled selected>
                         Select your role
                     </option>
                     <option value="student">Student</option>
