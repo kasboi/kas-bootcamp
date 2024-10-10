@@ -1,0 +1,129 @@
+---
+sidebar_position: 7
+title: HTML 1-06
+---
+
+import HtmlOutput from "@site/src/components/HtmlOutput"
+
+## HTML Styles
+
+I noted in the course introduction that we use:
+
+1. HTML - Webpage structure
+2. CSS - Styling
+3. JavaScript - Page interactions
+
+BUT, we can inlude all these within HTML itself without creating sepearate files.
+
+The HTML style attribute can be used to provide inline styling to elements.
+
+Styling format - `property: value;`
+
+```html
+<p style="padding: 20px; background-color: dodgerblue">
+    I am a paragraph text with a teal color
+</p>
+<p style="color: yellow; background-color: black">
+    I am a paragraph text with a yellow text color and black background
+</p>
+```
+
+### Output
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <p
+            style={{
+                backgroundColor: "dodgerblue",
+                padding: "20px",
+            }}
+        >
+            I am a paragraph text with a teal color
+        </p>
+        <p style={{ color: "yellow", backgroundColor: "black" }}>
+            I am a paragraph text with a yellow text color and black background
+        </p>
+    </HtmlOutput>
+</details>
+
+We will delve deeper into various styling properties later on.
+
+## HTML Colors
+
+HTML supports using predefined colour names (140 in total), RGB, RGBA, HEX, HSL or HSLA values.
+
+For the most in this course, we would be using the first four (4)
+
+### Examples
+
+```html showLineNumbers
+<!-- Color names -->
+<p style="color: white, background-color: dodgerblue">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit, id metus hac
+    fringilla mollis per.
+</p>
+<!-- RGB Color -->
+<p style="color: rgb(255, 0, 0); background-color: rgb(0, 0, 0);">
+    This paragraph uses RGB color format for text and background.
+</p>
+
+<!-- RGBA Color with transparency -->
+<p style="color: rgba(0, 128, 0, 1); background-color: rgba(255, 255, 0, 0.5);">
+    This paragraph uses RGBA color format for text and a semi-transparent
+    background.
+</p>
+
+<!-- HEX Color -->
+<p style="color: #0000FF; background-color: #FFFF00;">
+    This paragraph uses HEX color format for text and background.
+</p>
+
+<!-- RGB for text and HEX for background -->
+<p style="color: rgb(255, 165, 0); background-color: #8A2BE2;">
+    This paragraph uses RGB for text and HEX for background color.
+</p>
+```
+
+### Output
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+    {/* <!-- Color names --> */}
+<p style={{color: "white", backgroundColor: "dodgerblue"}}>
+    Lorem ipsum dolor sit amet consectetur adipiscing elit, id metus hac
+    fringilla mollis per.
+</p>
+  {/* RGB Color */}
+<p style={{ color: 'rgb(255, 0, 0)', backgroundColor: 'rgb(0, 0, 0)' }}>
+  This paragraph uses RGB color format for text and background.
+</p>
+
+{/* RGBA Color with transparency */}
+
+<p
+    style={{
+        color: "rgba(0, 128, 0, 1)",
+        backgroundColor: "rgba(255, 255, 0, 0.5)",
+    }}
+>
+    This paragraph uses RGBA color format for text and a semi-transparent
+    background.
+</p>
+
+{/* HEX Color */}
+
+<p style={{ color: "#0000FF", backgroundColor: "#FFFF00" }}>
+    This paragraph uses HEX color format for text and background.
+</p>
+
+{/* RGB for text and HEX for background */}
+
+<p style={{ color: "rgb(255, 165, 0)", backgroundColor: "#8A2BE2" }}>
+    This paragraph uses RGB for text and HEX for background color.
+</p>
+
+    </HtmlOutput>
+
+</details>

@@ -1,4 +1,5 @@
 import React from "react"
+import style from "./HtmlOutput.module.css"
 
 const HtmlOutput = ({ children }) => {
     return (
@@ -10,6 +11,7 @@ const HtmlOutput = ({ children }) => {
                 backgroundColor: "#f1f3f5",
                 color: "black",
             }}
+            className={style.anchor}
         >
             {children}
         </div>
