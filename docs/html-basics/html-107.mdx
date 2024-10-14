@@ -1,0 +1,99 @@
+---
+sidebar_position: 9
+title: HTML Semantics
+---
+
+## HTML Semantic elements
+
+HTML is used to defined the content and structure of a webpage. It is important for us as developers to structure our website in a machine-readable manner i.e. in a manner that the meanings can be properly inferred.
+
+`form` is an exmaple of a semantic element because it is obvious that it should contain form inputs. Another example which we've covered is the `table` element.
+
+Examples of non-semantic elements are `div` and `span`. Merely looking at it, it's hard to infer the purpose of the tags.
+
+```html
+<div>
+    <span>Three words</span>
+    <div>
+        <a>one word</a>
+        <a>one word</a>
+        <a>one word</a>
+        <a>one word</a>
+    </div>
+</div>
+<div>
+    <div>
+        <div>five words</div>
+    </div>
+    <div>
+        <div>three words</div>
+        <div>forty-six words</div>
+        <div>forty-four words</div>
+    </div>
+    <div>
+        <div>seven words</div>
+        <div>sixty-eight words</div>
+        <div>forty-four words</div>
+    </div>
+</div>
+<div>
+    <span>five words</span>
+</div>
+```
+
+Just looking at the code, it's hard to discern what most of the code blocks represent. A semantic approach is applied below:
+
+```html
+<header>
+    <h1>Three words</h1>
+    <nav>
+        <a>one word</a>
+        <a>one word</a>
+        <a>one word</a>
+        <a>one word</a>
+    </nav>
+</header>
+<main>
+    <header>
+        <h1>five words</h1>
+    </header>
+    <section>
+        <h2>three words</h2>
+        <p>forty-six words</p>
+        <p>forty-four words</p>
+    </section>
+    <section>
+        <h2>seven words</h2>
+        <p>sixty-eight words</p>
+        <p>forty-four words</p>
+    </section>
+</main>
+<footer>
+    <p>five words</p>
+</footer>
+```
+
+The benefits of using semantic elements include better accessiblity, SEO ranking and ensuring that the browser renders the content properly.
+
+### Common semantic elements
+
+Going forward, we would be seeing more of the following semantic elements:
+
+-   `section`
+-   `header`
+-   `nav`
+-   `footer`
+-   `main`
+-   `article`
+
+By their names, you can probably infer their purpose.
+
+In terms of visual output, most of these elements behave like `div` but they help communicate purpose to the browser and web-crawlers.
+
+There are over 50 semantic elements and you can read more about them via the References
+
+## References
+
+1. [HTML Semantics](https://www.w3schools.com/html/html5_semantic_elements.asp)
+2. [Semantic HTML - MDN](https://developer.mozilla.org/en-US/curriculum/core/semantic-html/)
+3. [web.dev - Semantic HTML](https://web.dev/learn/html/semantic-html)
