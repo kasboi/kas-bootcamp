@@ -1,120 +1,458 @@
 ---
 sidebar_position: 2
-title: The Cascade
+title: Common CSS Properties
 ---
 
 import HtmlOutput from "@site/src/components/HtmlOutput"
 
-## Cascading
+## Color
 
-Cascade means for something to flow from top to bottom like a waterfall. What this means for CSS is that the rules are checked from the top to the bottom, and whenever we have two conflicting rules with the same `specificity` (will cover this later) the one that comes later will used.
+You can use predefined colour names, RGB, RGBA, HSL or HSLA format for defining text, background or border colour.
 
-### Example
+### Text Colour — `color`
 
 ```html
-<style>
-    .title {
-        color: red;
-    }
-
-    .title {
-        color: green;
-    }
-</style>
-<p class="title">
-    Molestie quisque consequat faucibus mattis taciti vehicula ornare maecenas
-    nascetur magnis ligula nec.
+<p style="color: tomato;">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit facilisi cum
+    malesuada accumsan
+</p>
+<p style="color: dodgerblue;">
+    Tortor tellus facilisis tristique dapibus vehicula sociis iaculis dignissim
+    augue interdum purus euismod fermentum natoque
 </p>
 ```
 
-<HtmlOutput>
-    <p style={{ color: "green" }}>
-        Molestie quisque consequat faucibus mattis taciti vehicula ornare
-        maecenas nascetur magnis ligula nec.
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <p style={{ color: "tomato" }}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit facilisi cum
+            malesuada accumsan
+        </p>
+        <p style={{ color: "dodgerblue" }}>
+            Tortor tellus facilisis tristique dapibus vehicula sociis iaculis
+            dignissim augue interdum purus euismod fermentum natoque
+        </p>
+    </HtmlOutput>
+</details>
+
+### Background Colour — `background-color`
+
+```html
+<h1 style="background-color:DodgerBlue; color: #fff">Hello World</h1>
+<p style="background-color:Tomato;">Lorem ipsum...</p>
+```
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <h1 style={{ backgroundColor: "DodgerBlue", color: "#fff" }}>
+            Hello World
+        </h1>
+        <p style={{ backgroundColor: "Tomato" }}>Lorem ipsum...</p>
+    </HtmlOutput>
+</details>
+
+## Borders
+
+The css border property is defines the border `width`, `style` and `colour` of an elements border. The border width and style are required to see any visual output
+
+```html
+<p style="color: dodgerblue; border: 2px solid lemongreen;">
+    Tortor tellus facilisis tristique dapibus vehicula sociis iaculis dignissim
+    augue interdum purus euismod fermentum natoque
+</p>
+```
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <p style={{ color: "dodgerblue", border: "3px solid rebeccapurple" }}>
+            Tortor tellus facilisis tristique dapibus vehicula sociis iaculis
+            dignissim augue interdum purus euismod fermentum natoque
+        </p>
+    </HtmlOutput>
+</details>
+
+### `border-width`
+
+The `border-width` property specifies the width of the four borders.
+
+```html
+<p style="color: dodgerblue; border-width: 4px; border-style: solid">
+    Tortor tellus facilisis tristique dapibus vehicula sociis iaculis dignissim
+    augue interdum purus euismod fermentum natoque
+</p>
+```
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <p
+            style={{
+                color: "dodgerblue",
+                borderWidth: "4px",
+                borderStyle: "solid",
+            }}
+        >
+            Tortor tellus facilisis tristique dapibus vehicula sociis iaculis
+            dignissim augue interdum purus euismod fermentum natoque
+        </p>
+    </HtmlOutput>
+</details>
+
+:::note
+When the border colour is not defined, it defaults to the `colour` of the element.
+:::
+
+#### Specific side widths
+
+```html
+<style>
+    p.one {
+        border-style: solid;
+        border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+    }
+
+    p.three {
+        border-style: solid;
+        border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+    }
+
+    p.four {
+        border-style: solid;
+        border-top-width: 10px;
+        border-right-width: 20px;
+        border-bottom-width: 30px;
+        border-left-width: 5px;
+    }
+</style>
+<p class="one">Metus orci ultrices tempor platea ut pharetra mus accumsan.</p>
+<p class="two">Metus orci ultrices tempor platea ut pharetra mus accumsan.</p>
+<p class="three">Metus orci ultrices tempor platea ut pharetra mus accumsan.</p>
+<p class="four">Metus orci ultrices tempor platea ut pharetra mus accumsan.</p>
+```
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderWidth: "5px 20px",
+            }}
+        >
+            Metus orci ultrices tempor platea ut pharetra mus accumsan.
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderWidth: "20px 5px",
+            }}
+        >
+            Metus orci ultrices tempor platea ut pharetra mus accumsan.
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderWidth: "25px 10px 4px 35px",
+            }}
+        >
+            Metus orci ultrices tempor platea ut pharetra mus accumsan.
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderTopWidth: "10px",
+                borderRightWidth: "20px",
+                borderBottomWidth: "30px",
+                borderLeftWidth: "5px",
+            }}
+        >
+            Metus orci ultrices tempor platea ut pharetra mus accumsan.
+        </p>
+    </HtmlOutput>
+</details>
+
+### `border-style`
+
+The `border-style` property specifies the type of border to be used.
+
+Most used ones are: `solid`, `dotted`, `dashed`, `none`
+
+Other styles are - `double`, `groove`, `ridge`, `inset`, `outset`, `hidden`
+
+```html
+<style>
+    p.one {
+        border-style: solid;
+        border-color: red;
+    }
+
+    p.two {
+        border-style: solid;
+        border-color: green;
+    }
+
+    p.three {
+        border-style: dotted;
+        border-color: blue;
+    }
+</style>
+<body>
+    <h2>The border-color Property</h2>
+    <p>This property specifies the color of the four borders:</p>
+
+    <p class="one">A solid red border</p>
+    <p class="two">A solid green border</p>
+    <p class="three">A dotted blue border</p>
+
+    <p>
+        <b>Note:</b> The "border-color" property does not work if it is used
+        alone. Use the "border-style" property to set the borders first.
     </p>
-</HtmlOutput>
-
-## Specificity
-
-This is a term that describes the power of selectors. Different selectors have _specific_ overriding power i.e if multiple CSS rules target the same element, the rule with the highest specificity value will take precedence, and its style will be applied to the HTML element.
-
-### Examples
-
-1. Example 1:
-
-```html
-<html>
-    <head>
-        <style>
-            #example {
-                color: hotpink;
-            }
-            .sample {
-                color: chocolate;
-            }
-            p {
-                color: maroon;
-            }
-        </style>
-    </head>
-    <body>
-        <p id="example" class="sample">Specificity can be slimy!</p>
-    </body>
-</html>
+</body>
 ```
-
-**OUTPUT**
 
 <details>
     <summary>Toggle me!</summary>
     <HtmlOutput>
-        <p id="example" className="sample" style={{ color: "hotpink" }}>
-            Specificity can be slimy.
+        <p
+            style={{
+                borderStyle: "solid",
+                borderColor: "red",
+            }}
+        >
+            A solid red border
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderColor: "red",
+            }}
+        >
+            A solid green border
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                borderColor: "red",
+            }}
+        >
+            A dotted blue border
+        </p>
+        <p>
+            <b>Note:</b> The "border-color" property does not work if it is used
+            alone. Use the "border-style" property to set the borders first.
         </p>
     </HtmlOutput>
-    The `id` selector has a higher specificity than both `.class` and element
-    selector.
 </details>
 
-2. Example 2:
+### `border-radius`
+
+This property adds a degree of roundness to the borders of an element
 
 ```html
-<html>
-    <head>
-        <style>
-            .sample {
-                color: chocolate;
-            }
-            p {
-                color: maroon;
-            }
-        </style>
-    </head>
-    <body>
-        <p class="sample">Specificity can be slimy!</p>
-    </body>
-</html>
-```
+<style>
+    p.one {
+        border-style: solid;
+        padding: 15px;
+        border-color: red;
+        border-radius: 5px;
+    }
 
-**OUTPUT**
+    p.two {
+        border-style: solid;
+        padding: 15px;
+        border-color: green;
+        border-radius: 10px 20px;
+    }
+
+    p.three {
+        border-style: dotted;
+        padding: 15px;
+        border-color: blue;
+        border-radius: 24px;
+    }
+</style>
+<body>
+    <h2>The border-color Property</h2>
+    <p>This property specifies the color of the four borders:</p>
+
+    <p class="one">A solid red border</p>
+    <p class="two">A solid green border</p>
+    <p class="three">A solid purple border</p>
+
+    <p>
+        <b>Note:</b> The "border-color" property does not work if it is used
+        alone. Use the "border-style" property to set the borders first.
+    </p>
+</body>
+```
 
 <details>
     <summary>Toggle me!</summary>
     <HtmlOutput>
-        <p className="sample" style={{ color: "chocolate" }}>
-            Specificity can be slimy!
+        <p
+            style={{
+                borderStyle: "solid",
+                padding: "15px",
+                borderColor: "red",
+                borderRadius: "5px",
+            }}
+        >
+            A solid red border
+        </p>
+        <p
+            style={{
+                borderStyle: "solid",
+                padding: "15px",
+                borderColor: "green",
+                borderRadius: "10px 20px",
+
+            }}
+        >
+            A solid green border
+        </p>
+        <p
+            style={{
+                borderStyle: "dotted",
+                padding: "15px",
+                borderColor: "rebeccapurple",
+                borderRadius: "24px",
+
+            }}
+        >
+            A dotted purple border
+        </p>
+        <p>
+            <b>Note:</b> The "border-color" property does not work if it is used
+            alone. Use the "border-style" property to set the borders first.
         </p>
     </HtmlOutput>
-    The `.class` selector has a higher specificity than an element selector.
+
 </details>
 
-### Heirachy
+:::note
+The `border-radius` property is a shorthand for `border-top-left-radius`, `border-top-right-radius`, `border-bottom-right-radius` and `border-bottom-left-radius`.
 
-Every CSS selector occupies a specific position within the specificity hierarchy.
+`border-radius`: '10px 20px' specifies
 
-There are four categories that determine a selector's specificity level:
+`border-top-left-radius`: 10px;
 
-1. Inline styles - Example: `<h1 style="color: pink;">`
-2. IDs - Example: `#navbar`
-3. Classes, pseudo-classes, attribute selectors - Example: `.test`, `:hover`, `[href]`
-4. Elements and pseudo-elements - Example: `h1`, `::before`
+`border-top-right-radius`: 20px;
+
+`border-bottom-right-radius`: 10px;
+
+`border-bottom-left-radius`: 20px;
+:::
+
+## Fonts
+
+We use fonts to determine how texts appear on a webpage and choosing the right font is important for setting the tone and user experience.
+
+### `font-family`
+
+This is used to specify the font name and fallbacks
+
+```css
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+}
+```
+
+-   "Times New Roman" - This is the preferred font and the browser will try to get it from the users computer or external source (if specified)
+-   Times and Serif - These are fallbacks fonts to be used if the preferred font is unavailable.
+
+### `font-size`
+
+This property sets the text size. We use font sizes to differentiate between different types of texts such as headings and paragraphs.
+
+`font-size` can take absolute (fixed) or relative (depends on surrounding elements) values.
+
+The default font size for normal texts like paragraph is `16px`
+
+### Default font sizes
+
+The default font-size for normal is 16px and this is the base used for defining other elements default font size
+
+| Element                  | CSS Font Size | Calculated Font Size (Assuming base 16px) |
+| ------------------------ | ------------- | ----------------------------------------- |
+| `body`                   | 16px          | 16px                                      |
+| `h1`                     | 2em           | 32px (2 \* 16px)                          |
+| `h2`                     | 1.5em         | 16px (2 \* 16px)                          |
+| `h3`                     | 1.17em        | 18.72px (2 \* 16px)                       |
+| `h4`                     | 1em           | 16px (2 \* 16px)                          |
+| `h5`                     | 0.83em        | 13.28px (2 \* 16px)                       |
+| `h6`                     | 0.67em        | 10.72px (2 \* 16px)                       |
+| `p`                      | 1em           | 16px (1 \* 16px)                          |
+| `small`                  | 0.8em         | 12.8px (1 \* 16px)                        |
+| `strong`, `b`, `em`, `i` | 1em           | 16px (1 \* 16px)                          |
+| `blockquote`             | 1.17em        | 18.72px (1 \* 16px)                       |
+| `ul`, `ol`, `li`         | 1em           | 16px (1 \* 16px)                          |
+
+We would get more familiar with relative and absolute units as move on in the curriculum.
+
+## Text
+
+### `color`
+
+We use the `color` property to specify text colour
+
+### `background-color`
+
+This property specifies the background colour of the text
+
+### `text-align`
+
+The `text-align` property is used to set the horizontal alignment of a text. The default is left
+
+```html
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: right;
+    }
+
+    #second {
+      text-align: justify;
+    }
+</style>
+
+<h1>This is heading 1</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipiscing elit facilisi cum
+    malesuada accumsan
+</p>
+<p id="second">
+    Tortor tellus facilisis tristique dapibus vehicula sociis iaculis dignissim
+    augue interdum purus euismod fermentum natoque
+</p>
+```
+
+<details>
+    <summary>Toggle me!</summary>
+    <HtmlOutput>
+        <h1 style={{ textAlign: "center" }}>This is heading 1</h1>
+        <p style={{ textAlign: "right" }}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit facilisi cum
+            malesuada accumsan
+        </p>
+        <p style={{ textAlign: "justify" }}>
+            Tortor tellus facilisis tristique dapibus vehicula sociis iaculis
+            dignissim augue interdum purus euismod fermentum natoque
+        </p>
+    </HtmlOutput>
+</details>
+
+:::note
+We have more properties for specifying text alignment such as `text-align-last`, `vertical-align` and `direction`
+:::
