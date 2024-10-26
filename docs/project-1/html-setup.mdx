@@ -1,0 +1,97 @@
+---
+sidebar_position: 1
+title: "HTML Setup"
+---
+
+Create an `index.html` file and bootstrap a template using emmet `!`. Set the `title` to "Ben10 — Fan Club".
+
+Download starter files here -
+
+## Favicon
+
+Favicons are small images that appear on the broswer tab besides the page title. You can use any image for favicons but since they are small images, it should have high contrast. For this project, we will be using a favicon generator - [realfavicongenerator](https://realfavicongenerator.net/).
+
+Upload the accelerator image to the website. One of the benefits of using a favicon generator is that it helps you generate all the image files needed for different platforms at once. In addition to that, this website allows you to customise appearance for light and dark mode.
+
+import favicon_gen from "./img/favicon_generator.png";
+import favicon_path from "./img/favicon_path.png";
+
+<details>
+  <summary>Favicon settings</summary>
+
+<h3>Settings for light and dark mode</h3>
+<img src={favicon_gen} alt="favicon settings" />
+
+  <h3>Favicon path i.e location</h3>
+  <img src={favicon_path} alt="favicon path" />
+</details>
+
+Download the generated favicon package and unzip into the `img/favicon` folder i.e. `<web site>/img/favicon/`
+
+### Update HTML
+
+```html title="/ben10_project/index.html"
+<head>
+  <meta charset="UTF-8" />
+  <title>Ben10 Fan Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon Images -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/img/favicon/favicon-48x48.png"
+    sizes="48x48"
+  />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/img/favicon/apple-touch-icon.png"
+  />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+</head>
+```
+
+## Font - Inter
+
+You can embed font using various techniques such as using common system fonts (Times New Roman, Verdana, etc), download and ship with your website or external fonts.
+
+In this project, we would be using Inter font from [Google fonts](https://fonts.google.com/). Search for Inter and get the embed code for the web.
+
+```html title="/ben10_project/index.html"
+<head>
+  <!--    Inter Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+```
+
+## Header
+
+```html title="/ben10_project/index.html"
+<body>
+  <header>
+    <h1>Ben10 Fan Club</h1>
+  </header>
+</body>
+```
+
+To ensure the stylesheet and fonts are properly working
+
+```css title="/ben10_project/style.css"
+body {
+  font-family: "Inter", sans-serif;
+}
+```
+
+## References
+
+- [HTML Favicon](https://www.w3schools.com/html/html_favicon.asp) - W3Schools
+- Favicon generators:
+  - [favicon.io](https://favicon.io/) - Allows you to generate favicons from text and emoji
+  - [favicon.cc](https://www.favicon.cc/)
