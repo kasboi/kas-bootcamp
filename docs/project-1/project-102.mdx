@@ -4,3 +4,151 @@ title: "Project 102"
 ---
 
 We have a problem. The fixed `header` is nowhere to be found and the reason is simple, both the `header` and the `.banner` section are positioned and occupy overlaping space. Currently, the banner section is placed on top of the header, the solution is to specify which positioned element would be placed on the other and the property for that is `z-index`
+
+```css showLineNumbers {10}
+/* CSS styles */
+header {
+  color: #fff;
+  background-color: #728308;
+  padding: 2rem 0;
+  text-align: center;
+  /*  fixed positioning  */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+/* CSS styles */
+```
+
+By giving the `header` a higher z-index, it is placed on the `.banner` section.
+
+## Nav links & pseudo-classes
+
+```css showLineNumbers {5-6,9-12}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 2rem;
+  padding: 2.5rem 6rem;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+```
+
+- Here, we increase the font-size of the text in the nav list. Recall: `font-size` is an inheritable property
+- Applied padding of `1rem = 10px` to top and bottom & `3rem = 30px` to right and left
+- Removed the default underline on anchor tag links with `text-decoration: none;`
+- Set text colour
+
+### Pseudo-classes
+
+A pseudo-class targets and styles an element in a specific state.
+
+For instance, it can:
+
+- Change an element's appearance when the user hovers over it with a mouse
+- Differentiate styles for links that have been visited versus those that haven't
+
+```css
+nav li a:hover {
+  text-decoration: underline;
+}
+nav li a.join {
+  color: #728308;
+}
+```
+
+- ` nav li a:hover`: This targets any `<a>` (link) element within a `<li>` list item, specifically when a user hovers over it with their mouse.
+
+  - `text-decoration: underline;`: When the user hovers over the link, this rule adds an underline, visually indicating the hover effect for enhanced interaction.
+
+- `nav li a.join`: This targets the `<a>` link element with the class join inside a `<li>` element within a `<nav>` section.
+  - `color: #728308;`: The color for this link is set to `#728308`, a shade of green, giving it a distinct appearance from other links.
+
+## Main Section
+
+**HTML**
+
+```html
+<!-- Main Section -->
+<main>
+  <article>
+    <h2>Echo Echo, It's Doctor Tennyson</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
+      possimus sapiente, ducimus asperiores error eum ipsam quasi repellendus
+      iste earum laboriosam nesciunt officiis atque rerum quos incidunt
+      aspernatur velit voluptates. Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Praesentium labore perferendis minus incidunt doloribus,
+      eligendi repudiandae earum dignissimos est neque deserunt consequatur.
+      Repudiandae autem maxime magnam eveniet! Atque, suscipit amet. Lorem
+      ipsum, dolor sit amet consectetur adipisicing elit. Praesentium labore
+      perferendis minus incidunt doloribus, eligendi repudiandae earum
+      dignissimos est neque deserunt consequatur. Repudiandae autem maxime
+      magnam eveniet! Atque, suscipit amet.
+    </p>
+  </article>
+</main>
+```
+
+**CSS**
+
+```css
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+article h2 {
+  color: #728308;
+  font-size: 4.2rem;
+  margin-bottom: 2rem;
+}
+```
+
+- This limits the maximum width of the element to 1200px, so it won't expand beyond this width even on larger screens. This keeps content at a manageable width, improving readability.
+- `margin: 0 auto;`: This centers the `<main>` element horizontally within its container. The 0 sets the top and bottom margins to zero, while auto applies equal left and right margins, effectively centering the element on the page when it has a defined width or max-width.
+
+```css
+article p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color: #4b4b4b;
+}
+```
+
+- `line-height: 3rem;`: Sets the line height to 3 rems, adding vertical spacing between lines of text for better readability.
+
+### Pseudo-elements
+
+A CSS pseudo-element allows you to style particular parts of an element.
+
+For instance, it can:
+
+- Style the first letter or first line of text within an element
+- Add content before or after an element
+
+```css
+article p::first-line {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+article p::selection {
+  background: #728308;
+  color: #fff;
+}
+```
+
+- `p::first-line`: The `::first-line` pseudo-element targets only the first line of each `<p>` element within an `<article>`.
+- `p::selection`: The `::selection` pseudo-element styles the appearance of text when a user selects it (highlights it with a cursor).
+- `background: #728308;`: Sets the background color of selected text to a green shade.
+- `color: #fff;`: Changes the text color to white when selected, ensuring high contrast for readability against the green background.
+
+The complete code so far - [Github](https://github.com/kasboi/ben10_project/tree/project-102)
