@@ -1,0 +1,175 @@
+---
+sidebar_postion: 3
+title: "Project 101"
+---
+
+## Header
+
+```html
+<body>
+  <header>
+    <h1>Ben10 Fan Club</h1>
+  </header>
+</body>
+```
+
+```css
+header {
+  /* Text colors are also inherited by children elements */
+  color: #fff;
+  background-color: #728308;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+header h1 {
+  border: 0.8rem solid white;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 3.6rem;
+}
+```
+
+import header_img from "./img/header.png";
+
+<details>
+  <summary>Header</summary>
+  <img src={header_img} alt="document header" />
+</details>
+
+## Banner
+
+```html
+<section class="banner">
+  <img src="./img/ben10_banner.jpg" alt="welcome banner" />
+  <div class="welcome">
+    <h2>Welcome to <br /><span>Ben10 Club</span></h2>
+  </div>
+</section>
+```
+
+```css
+/* Banner Image */
+.banner img {
+  width: 100%;
+}
+```
+
+## Navigation Links
+
+```html
+<!--Navigation Links-->
+<nav class="main-nav">
+  <ul>
+    <li><a href="#" class="join">Join the club</a></li>
+    <li><a href="#">Latest news</a></li>
+    <li><a href="#">New movies</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+```
+
+```css
+/* Navigation Links */
+
+nav {
+  background: #f4f4f4;
+  padding: 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+```
+
+## CSS Position
+
+The next objectives are:
+
+1. Make our header fixed to the top
+2. Move the the welcome text into the banner image
+3. Make the navigation links stick to the top when you scroll past it
+
+To do that, we need to learn about CSS Position which is a property that lets us change the layout of the page by defining the position of elements on the webpage. The [w3schools](https://www.w3schools.com/css/css_positioning.asp) lesson is perfect with the examples given.
+
+Here's a summary of each position property:
+
+**Static**: By default, elements are positioned statically, meaning they follow the normal document flow and ignore any top, right, bottom, left, or z-index values.
+
+**Relative**: The element's position remains part of the document flow, similar to static positioning. However, the top, right, bottom, left, and z-index properties now work to shift it slightly from its original location.
+
+**Absolute**: The element is removed from the document flow, and other elements will behave as if it's not there. All positioning properties (top, right, bottom, left, z-index) apply directly to it.
+
+**Fixed**: Like absolute positioning, a fixed element is also removed from the flow, but it always stays in a fixed spot relative to the viewport, unaffected by scrolling. It doesn't respond to parent elements for positioning.
+
+**Sticky**: This element behaves as relative until the user scrolls to a certain point in the viewport, where it becomes fixed. This allows it to “stick” to a specific position once that scroll threshold is reached.
+
+**Inherit**: This setting makes an element take on its parent's positioning value, allowing positioning properties to cascade from the parent element.
+
+## Project Continuation
+
+```css
+header {
+  color: #fff;
+  background-color: #728308;
+  padding: 2rem 0;
+  text-align: center;
+  /*  fixed positioning  */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+```
+
+- `position: fixed;`: The element is removed from the flow of the document and becomes fixed.
+- `top: 0;`: This positions the element to the top of the page
+- `width: 100%;`: Even though the element is a block element, by changing it to a fixed element, it takes up just the width of its content like a `display: inline;`. `width: 100%` forces it to take up the entire width of the page.
+
+### Banner section
+
+```css showLineNumbers {2-4,8,12-27}
+/* SECTION - BANNER */
+.banner {
+  position: relative;
+}
+/* Banner Image */
+.banner img {
+  /* To cover the entire section */
+  display: block;
+  width: 100%;
+}
+
+.banner .welcome {
+  font-size: 6rem;
+  padding: 3rem;
+  position: absolute;
+  left: 0;
+  top: 30%;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.banner .welcome span {
+  font-size: 1.5em;
+}
+```
+- `.banner { position: relative; }`: The `.banner` section is positioned relatively, which means it will stay within the normal document flow but serves as a reference point for any absolutely positioned elements inside it.
+- `.banner img { display: block; }`: Sets the image to block display mode, making it behave as a block element without extra spacing around it.
+- `width: 100%;`: Stretches the image to cover the full width of the `.banner` section.
+- `position: absolute; left: 0; top: 30%;`: Positions the `.welcome` element absolutely within the `.banner`, starting 30% from the top and 0% from the left edge.
+- `background-color: rgba(255, 255, 255, 0.5);`: Creates a semi-transparent background using RGBA for better readability over the banner image.
+- `backdrop-filter: blur(10px);`: Adds a 10px blur effect behind the background, creating a frosted glass appearance.
+
+The complete code so far — [Github](https://github.com/kasboi/ben10_project/tree/project-101)
+
+## References
+
+- [CSS Layout - W3Schools](https://www.w3schools.com/css/css_positioning.asp)
+- [CSS Position - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+- [Learn CSS Position in 9 minutes - YouTube](https://www.youtube.com/watch?v=jx5jmI0UlXU)
+- [Position - CSS Tricks](https://css-tricks.com/almanac/properties/p/position/)

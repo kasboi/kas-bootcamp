@@ -3,3 +3,201 @@ sidebar_position: 2
 title: "CSS Setup"
 ---
 
+## CSS Reset
+
+One of the first things you might want to do is reset the default margins and paddings on the elements
+
+```css
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: "border-box";
+}
+```
+
+1. The `*` selector is called a universal selector which selects every element on the webpage. It has a specificity of zero (0) meaning any selector can override it.
+
+2. We set the padding and margin of every to 0, this includes headings (h1, h2, ..., h6), paragraphs and lists.
+
+### `box-sizing`
+
+To better understand this property, we need to take a look at the box model. This [w3schools](https://www.w3schools.com/css/css_boxmodel.asp) lesson explains this perfectly.
+
+TLDR: When you specify the height and width of an element, this only covers the content area. The total width and height will include the `border-width` and `padding`
+
+import box_model from "./img/box-model.jpg";
+
+<details>
+  <summary>Box model</summary>
+
+{" "}
+
+<h3>Box model</h3>
+<img src={box_model} width={480} alt="favicon path" />
+
+{" "}
+
+<p>
+  The total width in the element above = (300 + 40 + 40 + 20 + 20)px = 420px
+</p>
+<p>
+  The total height in the element above = (250 + 40 + 40 + 20 + 20)px = 370px
+</p>
+
+</details>
+
+We can change this behavior using the `box-sizing` property. The default value is `content-box`, but we can use the `border-box` value to ensure that the padding and border-width are incorporated into the width and height of the element.
+
+```html
+<style>
+  .div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+  }
+
+  .div2 {
+    width: 300px;
+    height: 100px;
+    padding: 50px;
+    border: 1px solid red;
+    box-sizing: border-box;
+  }
+</style>
+<body>
+  <h2>With box-sizing</h2>
+
+  <div class="div1">Both divs are the same size now!</div>
+  <br />
+  <div class="div2">Hooray!</div>
+</body>
+```
+
+import HtmlOutput from "@site/src/components/HtmlOutput";
+
+<details>
+  <summary>`border-box`</summary>
+  <HtmlOutput>
+    <h2>border-box</h2>
+
+    <div style={{
+      width: "300px",
+      height: "100px",
+      border: "2px solid blue",
+      boxSizing: "border-box"
+    }}>Both divs are the same size now!</div>
+    <br />
+    <div style={{
+      width: "300px",
+      height: "100px",
+      border: "2px solid red",
+      padding: "50px",
+      boxSizing: "border-box"
+    }}>Hooray!</div>
+
+  </HtmlOutput>
+</details>
+
+The code below shows what it would have looked like by default
+
+```html
+<style>
+  .div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    /* This can be ommitted since it's the default */
+    box-sizing: content-box;
+  }
+
+  .div2 {
+    width: 300px;
+    height: 100px;
+    padding: 50px;
+    border: 1px solid red;
+    /* This can be ommitted since it's the default */
+    box-sizing: content-box;
+  }
+</style>
+```
+
+<details>
+  <summary>`content-box`</summary>
+  <HtmlOutput>
+    <h2>content-box</h2>
+
+    <div style={{
+      width: "300px",
+      height: "100px",
+      border: "2px solid blue",
+      boxSizing: "content-box"
+    }}>300px width, 1px border-width and zero padding</div>
+    <br />
+    <div style={{
+      width: "300px",
+      height: "100px",
+      border: "2px solid red",
+      padding: "50px",
+      boxSizing: "content-box"
+    }}>Same width and border-width but the padding inflates the total width and height</div>
+
+  </HtmlOutput>
+</details>
+
+## fonts
+
+Next, we need to properly set the fonts on the webpage
+
+```css
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-size: 1.6rem;
+}
+```
+
+The first thing to know is that fonts are inherited from the parent element, so whenever we define a font on the `html` tag, it's inherited by the `body` tag and the `paragraph` elements inherit it from the `body` and so on.
+
+### `html { font-size: 62.5% }`
+
+Here, we set the font-size of the html document to a relative unit i.e. percentage (%). The default font size is 16px for most browsers, so when we set the font-size to 62.5% it becomes `0.625 * 16 = 10px`.
+
+### `body { font-size: 1.6rem }`
+
+`rem` is also a relative unit which is based on the font-size of the root element (`html`). when the html font-size is 10px:
+
+- `1rem = 1 x 10px = 10px`
+- `1.5rem = 1.5 x 10px = 15px`
+
+:::note[% vs px]
+You might be wondering why we used `62.5%` as the root font size and not just explicitly use `10px`. The reason is mostly based on accessibility. In most browsers, the default font size is `16px` but some users might change this to something bigger like `18px` or `20px`, so if we override this with `10px`, we will be forcing a smaller font on them. but when we use relative fonts `62.5%` will be `10px` on normal browsers but `11.25px` for browsers set to `18px` or `12.5px` for browsers set to `20px`.
+:::
+
+Refer to this lesson to learn how certain elements determine their own font-size: [default font size](/docs/css-basics/css-102#default-font-sizes)
+
+### Fonts Summary
+
+I know this topic can be confusing and that's normal. You can keep coming back to this lesson anytime to refresh or read up on the references attached.
+
+- `font-family` is inherited i.e. The font (Inter) applied to the `html` selector is inherited by the `body` element and all of its children.
+
+- Most elements have a default `font-size` which is based on the root element i.e. html. The default for most browsers is 16px but the user might change it.
+  - Example: If the root font-size is 16px, h1 is `2em = 2 x 16 = 32px`. Consult this [lesson](/docs/css-basics/css-102#default-font-sizes) to see the rest.
+
+## References
+
+- [CSS universal selector](https://www.w3schools.com/cssref/sel_all.php)
+- [Box Model](https://www.w3schools.com/css/css_boxmodel.asp)
+- [box-sizing](https://www.w3schools.com/css/css3_box-sizing.asp)
+- [Box sizing article](https://medium.com/@nico.jcbp/understanding-css-box-sizing-border-box-bb1881e47dc4)
