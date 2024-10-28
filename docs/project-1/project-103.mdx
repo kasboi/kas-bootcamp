@@ -1,0 +1,42 @@
+---
+sidebar_postion: 5
+title: "Project 103"
+---
+
+## Section Images, CSS `transform` & `transition`
+
+```html
+<main>
+  <!-- prev. code -->
+  <!--  Images Section  -->
+  <section class="images">
+    <img src="./img/accelerator.png" alt="ben10 accelerator" />
+    <img src="./img/diamond.png" alt="ben10 diamond" />
+    <img src="./img/four_arms.png" alt="ben10 four arms" />
+  </section>
+</main>
+```
+
+**CSS**
+
+```css
+section.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.images img {
+  width: 32rem;
+}
+```
+
+- `display: flex;`: This sets the layout of the .images section to a flex container, allowing its child elements to be aligned and spaced using flexbox properties.
+
+- `justify-content: space-between;`: This spaces the child elements evenly across the horizontal axis, placing the first item at the start, the last item at the end, and distributing any remaining space equally between the items.
+
+- `align-items: center;`: This centers the child elements along the vertical axis (based on the container's height), ensuring they are aligned in the middle.
+
+We will cover flexbox layout properly in upcoming lessons.
+
+### CSS Transform
