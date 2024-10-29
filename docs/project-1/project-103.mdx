@@ -21,22 +21,89 @@ title: "Project 103"
 
 ```css
 section.images {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
 }
 
 section.images img {
   width: 32rem;
+  margin: 0 1rem;
+  vertical-align: middle;
 }
 ```
 
-- `display: flex;`: This sets the layout of the .images section to a flex container, allowing its child elements to be aligned and spaced using flexbox properties.
+- `text-align: center;`: This sets the layout of the .images section to a flex container, allowing its child elements to be aligned and spaced using flexbox properties. Images are `inline` by default so it flows with text, this allows the text alignment to work.
 
-- `justify-content: space-between;`: This spaces the child elements evenly across the horizontal axis, placing the first item at the start, the last item at the end, and distributing any remaining space equally between the items.
+### CSS `transform`
 
-- `align-items: center;`: This centers the child elements along the vertical axis (based on the container's height), ensuring they are aligned in the middle.
+The CSS `transform` property allows elements to be visually altered in two-dimensional or three-dimensional space without affecting the document flow. It can be used to rotate, scale, skew, or translate elements, creating dynamic visual effects.
 
-We will cover flexbox layout properly in upcoming lessons.
+- `rotate()`: Rotates an element by a specified angle.
+- `scale()`: Changes the element's size.
+- `skew()`: Tilts the element along the x or y axis.
+- `translate()`: Moves the element from its original position.
 
-### CSS Transform
+<iframe
+  height="450"
+  style={{ width: "100%" }}
+  scrolling="no"
+  title="Untitled"
+  src="https://codepen.io/kolawole-abdullah-solahudeen/embed/bGXveKe?default-tab=html%2Cresult&editable=true"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen{" "}
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXveKe">
+    Untitled
+  </a>{" "}
+  by Kolawole Abdullah Solahudeen (
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+    @kolawole-abdullah-solahudeen
+  </a>
+  ) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+### CSS `transition`
+
+The CSS `transition` property allows for smooth changes between property values over a specified duration, making animations more fluid and visually appealing. It's commonly used to animate elements on events like `hover`, `focus`.
+
+### Key Properties:
+
+- `transition-property`: Specifies the CSS property to transition (e.g., color, width, transform).
+- `transition-duration`: Defines how long the transition lasts (e.g., 0.5s, 2s).
+- `transition-timing-function`: Controls the speed of the transition over time (e.g., ease, linear, ease-in, ease-out).
+- `transition-delay`: Sets a delay before the transition starts (e.g., 1s).
+
+Two things must be specified when using the transition property:
+
+1. CSS property the effect is to be added to
+2. Duration of the effect
+
+<iframe
+  height="300"
+  style={{width: "100%"}}
+  scrolling="no"
+  title="Untitled"
+  src="https://codepen.io/kolawole-abdullah-solahudeen/embed/XWvEzwB?default-tab=html%2Cresult&editable=true"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen{" "}
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/XWvEzwB">
+    Untitled
+  </a>{" "}
+  by Kolawole Abdullah Solahudeen (
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+    @kolawole-abdullah-solahudeen
+  </a>
+  ) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+## References
+
+1. [w3schools transform demo](<https://www.w3schools.com/cssref/playdemo.php?filename=playcss_transform&preval=rotateX(45deg)>)
+2. [w3schools transition](https://www.w3schools.com/css/css3_transitions.asp)
+3. [MDN CSS transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)
