@@ -1,0 +1,150 @@
+---
+sidebar_postion: 5
+title: "Project 104"
+---
+
+# Newsletter, input pseudo-classes & footer
+
+Up next is the newsletter section where we collect visitors email.
+
+```html
+<section class="newsletter">
+  <h2>Join Today!</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, commodi
+    eos facere harum iure mollitia! Beatae eveniet incidunt provident qui.
+  </p>
+  <form>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Enter email & hit enter"
+    />
+  </form>
+</section>
+```
+
+**CSS**
+
+```css
+section.newsletter {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+
+section.newsletter h2 {
+  font-size: 3.4rem;
+  margin: 2rem 0;
+}
+
+section.newsletter p {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+```
+
+## form `input`
+
+```css
+form input {
+  background-color: #f8f9fa;
+  margin: 2rem 0;
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  border-radius: 2.8rem;
+  border: 4px solid #ced4da;
+}
+```
+
+When we focus on the input, you notice it has a black ring around it. This is an [outline](https://www.w3schools.com/css/css_outline.asp), which is a line drawn around elements outside the border. To disable it:
+
+```css
+form input {
+  background-color: #f8f9fa;
+  margin: 2rem 0;
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  border-radius: 2.8rem;
+  border: 4px solid #ced4da;
+  outline: none;
+}
+```
+
+## Form state — `:focus`, `:valid` & `:invalid`
+
+Just like anchor tags have dedicated pseudo-classes such as `:link` and `:visited`, form inputs also have theirs. In this section, we would apply some styling to let the user know the state of their input i.e valid or not
+
+```css
+form input:valid {
+  background-color: #f4fce3;
+  border: 4px solid #a9e34b;
+}
+
+form input:invalid {
+  background-color: #fff5f5;
+  border: 4px solid #ff8787;
+}
+```
+
+This flags the input automatically as valid but also indicates when the input is invalid as the user types.
+
+I do not agree with this behaviour, what i want is for the input to be in a neutral state when the page loads or out of focus. The validity styling should only appear on focus.
+
+```css
+form input:focus:valid {
+  background-color: #f4fce3;
+  border: 4px solid #a9e34b;
+}
+
+form input:focus:invalid {
+  background-color: #fff5f5;
+  border: 4px solid #ff8787;
+}
+```
+
+If you prefer though, you can leave the input `:invalid` as it was i.e. always display the invalid styling when there's an error regardless of focus.
+
+One last thing, the browser declares the input as valid immediately we focus on this input. we want to avoid this by applying the required attribute to the input.
+
+```html
+<input
+  type="email"
+  name="email"
+  id="email"
+  placeholder="Enter email & hit enter"
+  minlength="6"
+  required
+/>
+```
+Took it a step further by ensuring the minimum length of the input is six (6).
+
+### Optional
+
+You can even take this verification further by only validating after the user starts typing
+
+```css
+form input:focus:invalid:not(:placeholder-shown) {
+    background-color: #fff5f5;
+    border: 4px solid #ff8787;
+}
+```
+
+With this, the validation starts after the first keyword is inputted.
+
+## Footer
+
+```html
+<footer>
+    <p class="copyright">Copyright &copy; 2024 Ben10 Club</p>
+</footer>
+```
+The only new thing here is `&copy;`, which is called a HTML character enitity. Charater entities allow us to use symbols and other characters which are reserved in HTML such as `>` and `<`.
+
+## References
+
+1. [Input pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#input_pseudo-classes)
+2. [HTML character entities](https://www.w3schools.com/html/html_entities.asp)
+3. [Outline](https://www.w3schools.com/css/css_outline.asp)
