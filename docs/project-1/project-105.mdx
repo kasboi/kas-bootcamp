@@ -183,6 +183,98 @@ This property specifies whether the background image scrolls along with the elem
   </iframe>
 </details>
 
+## `background-size`
+
+The background-size property in CSS allows you to control how a background image is resized to fit within an element's dimensions. Two commonly used values for this property are contain and cover, each of which behaves differently:
+
+- `background-size: contain;`
+
+  **Description**: Scales the background image to fit within the element while preserving its aspect ratio. This means that the entire image will be visible, but there may be empty space (often a "letterbox" effect) if the image and element have different aspect ratios.
+
+  **Use Case**: Best when you want the entire image to be visible without any cropping, such as for logos, icons, or images that need to be fully seen within a designated area.
+
+<details>
+  <summary>`background-size: contain;`</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/dyxjezQ?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+- `background-size: cover;`
+
+  **Description**: Scales the background image to completely cover the element's background area, while preserving the image's aspect ratio. This can result in part of the image being cropped if its aspect ratio does not match that of the element.
+  **Use Case**: Useful for full-screen backgrounds, banners, and other situations where you want the background to fully cover the element without worrying about empty spaces, even if parts of the image may be cropped.
+
+<details>
+  <summary>`background-size: cover;`</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/xxvJjWJ?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+### Summary Table
+
+| Property             | `contain`                                            | `cover`                                          |
+| -------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| **Resizes Image To** | Fit within the element                               | Cover the entire element                         |
+| **Aspect Ratio**     | Maintained                                           | Maintained                                       |
+| **Empty Space**      | Yes, if aspect ratio differs from the element        | No                                               |
+| **Cropping**         | No cropping                                          | Cropped if aspect ratio differs from the element |
+| **Best For**         | Icons, logos, or any content needing full visibility | Full backgrounds, banners, hero images           |
+
+Choosing between `contain` and `cover` depends on whether you prioritize full image visibility (`contain`) or a fully filled background area (`cover`).
+
+You can also use other units to specify the image size such px and percentage.
+
+```css
+div {
+  background-size: 30%;
+}
+
+section {
+  /* width: 200px & height: 100px */
+  background-size: 200px 100px;
+}
+```
+
 ## `background` shorthand
 
 <details>
