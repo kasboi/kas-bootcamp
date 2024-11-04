@@ -1,0 +1,212 @@
+---
+sidebar_postion: 6
+title: "CSS Background"
+---
+
+## `background`
+
+Let's talk about CSS `background` property before moving on with our mini project. The `background` property is a shorthand for many background properties.
+
+## `background-color`
+
+This we have used multiple times for defining the background colour of an element.
+
+```css
+p {
+  background-color: #f3f;
+}
+
+section {
+  /* This will also work */
+  background: rebeccapurple;
+}
+```
+
+## `background-image`
+
+This is for setting an image as the background of an element. By default, the image is repeated to fill the entire container vertically and horizontally.
+
+In the example below we have a container which has a width of `1200px` and height of `600px`. The background image applied to it has a width of `556px` and height of `371px` and you can see it being repeated to fill the entire `div` container.
+
+<details>
+  <summary>Toggle me</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/mdNjwrX?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/mdNjwrX">
+      bg-image
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+An image with a wide width and height would not have the same effect. The background image applied below has a width of `1400px` and height of `933px`.
+
+<details>
+<summary>Toggle me</summary>
+<p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+<iframe
+  height="600"
+  style={{ width: "100%" }}
+  scrolling="no"
+  title="bg-image"
+  src="https://codepen.io/kolawole-abdullah-solahudeen/embed/NWQBgpo?default-tab=html%2Cresult&editable=true"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+  See the Pen{" "}
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/NWQBgpo">
+    bg-image
+  </a>{" "}
+  by Kolawole Abdullah Solahudeen (
+  <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+    @kolawole-abdullah-solahudeen
+  </a>
+  ) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+</details>
+
+### `linear-gradient()`
+
+It's not just images you can specify for the `background-image` property, you can also make use of linear-gradient function which allows us to blend multiple colours together.
+
+To use it, you must define at least two colours, the starting colour to transition from and the ending colour. You can also
+set a direction (or angle).
+
+<details>
+  <summary>Toggle me</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/bGXjRjJ?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+## `background-repeat`
+
+This property is used to specify how the image should be repeated, by default it is repeated vertically and horizontally. You can change this to:
+
+- `no-repeat`: The image does not repeat in either axis
+- `repeat-x`: To repeat in the vertical direction only
+- `repeat-y`: To repeat in the horizontal direction only
+
+<details>
+  <summary>Toggle me</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/rNXrzam?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+## `background-attachment`
+
+This property specifies whether the background image scrolls along with the element or remains fixed to a spot.
+
+<details>
+  <summary>Toggle me</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <p>
+    Edit the `background-attachment` from fixed to scroll to see difference.
+  </p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/OJKwgqq?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+## `background` shorthand
+
+<details>
+  <summary>Toggle me</summary>
+  <p>click on the `0.5x` or `0.25x` to zoom out to see the entire page</p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image-linear-gradient"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/xxvJrQr?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/bGXjRjJ">
+      bg-image-linear-gradient
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
