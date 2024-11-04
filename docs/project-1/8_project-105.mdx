@@ -1,0 +1,45 @@
+---
+sidebar_postion: 8
+title: "Project 105"
+---
+
+We would apply a simple background image to the section displaying the various Ben10 figures.
+
+```html
+<main>
+  <article>
+    <h2>Echo Echo, It's Doctor Tennyson</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur minus
+      voluptatibus consequatur dolorem aliquam inventore impedit delectus,
+      perspiciatis quia optio sunt ut qui repellat deserunt, unde, recusandae
+      explicabo. Maiores voluptatum vel quasi dolorum alias cum deleniti aliquid
+      itaque magnam commodi voluptate laudantium veniam, expedita vero pariatur?
+      Nulla ipsam quisquam saepe ea ratione eligendi minima odio exercitationem
+      aliquam perspiciatis explicabo dicta corrupti odit ipsa molestiae,
+      corporis laborum soluta totam sit neque id facere possimus eveniet
+      dolores! Blanditiis eum officia quibusdam debitis error repellat eveniet
+      commodi culpa? Dolorem dolores et rem debitis quibusdam nobis fugit, hic
+      assumenda ratione cumque? Esse, quis iusto?
+    </p>
+  </article>
+</main>
+<!-- SECTION - IMAGES -->
+<section class="images">
+  <img src="./img/accelerator.png" alt="ben10 accelerator" />
+  <img src="./img/diamond.png" alt="ben10 diamond" />
+  <img src="./img/four_arms.png" alt="ben10 four arms" />
+</section>
+```
+
+First thing we did was move the section out of the `main` element because the padding on the `main` affects the entire section but we want the background image to span the entire width of the container.
+
+```css {4-6}
+/* SECTION - IMAGES */
+section.images {
+  text-align: center;
+  padding: 4rem 0;
+  background-attachment: fixed;
+  background-image: url("https://i.ibb.co/NZYDg9K/ben10-background.png");
+}
+```
