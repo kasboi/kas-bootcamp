@@ -1,6 +1,6 @@
 ---
 sidebar_postion: 10
-title: "Project 106 - Media Queries"
+title: "Project 106 - Media Queries & Hosting"
 ---
 
 There are 2 main approaches towards responsive design, mobile first or desktop first.
@@ -153,3 +153,44 @@ The breakpoints I have chosen are: `1024px`, `768px`, `600px` and `480px`. There
 - `section.newsletter p` - Reduced font-size to make content look better.
 
 Complete code can be found here — [Github](https://github.com/kasboi/ben10_project/tree/project-106)
+
+## Project Hosting
+
+I believe this project is good enough to show off as a reward of your hardwork, and it's hard to that with everyone you know from your own pc. To put your website on the internet, you need a web hosting platform to store all your files and generate a URL which you can share. There are two main free(-ish) hostiing platforms i prefer, [Netlify](https://app.netlify.com/) and [Vercel](https://vercel.com/).
+
+For this project, I would be using Netlify.
+
+import netlify_dashboard from "./img/netlify_dashboard.png";
+import netlify_drag from "./img/netlify_drag_drop.png";
+import netlify_deploys from "./img/netlify_deploy_settings.png";
+import netlify_url from "./img/netlify_url_dashboard.png";
+
+## Netlify
+
+There are 2 ways to publish your web app on Netlify. Setting up with your GitHub repository or uploading manually. This guide would be focusing on uploading manually
+
+### Steps
+
+1. Create an account with Netlify - [sign up page](https://app.netlify.com/signup) using:
+   1. An existing GitHub account
+   2. E-mail & password
+2. Verify your account via link sent to e-mail
+3. Log in with your credentials
+4. You should get redirected to your dashboard
+
+   <img src={netlify_dashboard} alt="netlify platform dashboard" />
+
+5. Click on Add new site → Deploy manually
+6. You get redirected to the drop page.
+
+   <img src={netlify_drag} alt="netlify drag and drop" />
+
+7. Drag and drop your website folder there or click on `browse to upload` and pick the folder. Ensure you pick the correct folder containing the HTML, CSS and JavaScript(if necessary) files.
+   **NOTE**: The main or landing page must be named `index.html` so that Netlify knows where to point to.
+8. Wait for it completely upload, do not refresh while doing so
+9. You should get redirected to a page that looks like this
+
+   <img src={netlify_deploys} alt="netlify deploys page" />
+
+10. Click on site overview on the sidebar and you should see the generated URL that points to website live online
+    <img src={netlify_url} alt="netlify generated url dashboard" />
