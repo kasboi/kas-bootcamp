@@ -1,0 +1,227 @@
+---
+sidebar_postion: 9
+title: "Responsive Design & Media Queries"
+---
+
+Responsive design is an approach to web development whereby the layout and elements on a website adapt to different screen sizes and devices to provide smooth and consistent user experiences. In essence, creating a website that is nice for not only desktop users, but also tablets and mobile users. There are various techniques used to achieve this such as flexbox and grid layouts, media queries, responsive images and the likes.
+
+## Media Queries
+
+Media queries are CSS rules that apply styles based on the screen's characteristics, such as width, height, orientation, or resolution. By defining various breakpoints (specific screen sizes), media queries allows us to create unique designs and layouts at different viewport sizes.
+
+```html
+<div class="container">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+```
+
+**CSS**
+
+```css
+.container {
+  height: 300px;
+  background: #e6fcf5;
+  border: 4px solid #087f5b;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.box {
+  width: 200px;
+  border: 3px solid #a61e4d;
+  background: #fff0f6;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    background: #f3f0ff;
+    border: 4px solid #5f3dc4;
+  }
+  .box {
+    background: #fff9db;
+    border: 3px solid #e67700;
+  }
+}
+```
+
+Here, we have a `.container` with four `.box` items in a row. But, when you adjust the screen sizes you begin to see different styles being applied to the elements at various breakpoints.
+
+### Breakdown
+
+1. `@media` - This indicates the start of a media query
+2. `screen` (optional) - This specifies that the styles inside the media query should only apply to screens, such as monitors, tablets, and mobile phones. The alternatives are:
+
+- `print` - applies to print media e.g. when printing the content of a website (Visit w3schools and press `ctr + p`. Notice how the layout is different from the default destop layout)
+- `all` - applies to both print and screen. This is the default.
+
+3. `(max-width: 1024px)` - This condition restricts the styles to screens with a maximum width of 1024 pixels. This means that as long as the screen width is 1024px or less (such as on a tablet or a smaller device), the styles within this media query will take effect.
+
+When the screen width is 1024px or smaller, these specific styles for `.container` and `.box` will override any previous styles for those classes.
+
+<details>
+  <summary>Codepen</summary>
+  <p>
+    Open the codepen editor in a separate tab and decrease the viewport width to
+    see the changes.
+  </p>
+  <iframe
+    height="600"
+    style={{ width: "100%" }}
+    scrolling="no"
+    title="bg-image"
+    src="https://codepen.io/kolawole-abdullah-solahudeen/embed/ExqdLev?default-tab=html%2Cresult&editable=true"
+    frameborder="no"
+    loading="lazy"
+    allowtransparency="true"
+    allowfullscreen="true"
+  >
+    See the Pen{" "}
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen/pen/mdNjwrX">
+      bg-image
+    </a>{" "}
+    by Kolawole Abdullah Solahudeen (
+    <a href="https://codepen.io/kolawole-abdullah-solahudeen">
+      @kolawole-abdullah-solahudeen
+    </a>
+    ) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</details>
+
+These topics have been kept simple to avoid overwhelming you. If you are interested in learning more, check the references below
+
+## Responsive Images
+
+If you inspect our Ben10 fan page and check the network tab, you will notice the background image is a whooping `4mb` file. This is large normally and even more so for mobile users, because it's a waste of bandwith and a smaller image will do.
+
+Responsive images are crucial in responsive web design, ensuring that images look sharp and load efficiently across various devices. They provide flexibility, allowing websites to serve images that are optimized for different screen sizes, resolutions, and network speeds.
+
+```html
+<img
+  src="image-small.jpg"
+  srcset="image-small.jpg 400w, image-medium.jpg 800w, image-large.jpg 1200w"
+  sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+  alt="Responsive image example"
+/>
+```
+
+### Breakdown
+
+1. `srcset` - provides three images (400w, 800w, and 1200w) for different resolutions.
+2. `sizes` - describes the approximate display width in CSS pixels, guiding the browser on which image to load based on viewport width.
+
+Basically gives the browser 3 alternative images and their actual size with the `srcset` attribute and then using the `sizes` attribute, we tell the browser -> for screen sizes 600px and smaller, the image should be 480px and for 1200px and below, use a 800px image. For everything else, use the 1200px image.
+
+We will use these techniques going forward to improve our project and make it responsive.
+
+## Ben10 project continuation
+
+The first we do is generate responsive images for the image assets we have in the HTML. One of the great thing about frontend development, is that we have a lot of amazing tools—often free—for various tasks.
+In this case, we will use [responsivebreakpoints](https://www.responsivebreakpoints.com/) for responsive image generation.
+
+import responsive_breakpoints from "./img/responsivebreakpoints.png";
+import responsive_result from "./img/resposive_result.png";
+import generated_img from "./img/generated_img.png";
+
+<details>
+  <summary>Settings</summary>
+  <img src={responsive_breakpoints} alt="responsive breakpoints settings" />
+  <p>
+    - **Max images** - The maximum number of responsive images to be geenrated
+    from the original image.
+  </p>
+  <img src={responsive_result} alt="responsive breakpoints results" />
+</details>
+
+Next step is to download the generated zip folder containing all the images, unzip it and move the images into the Ben10 development folder.
+
+<details>
+  <summary>Folder Structure</summary>
+  <img src={generated_img} alt="folder structure" />
+</details>
+
+### Update `img` element
+
+```html title="index.html"
+<!-- code-remove-next-line -->
+<img src="./img/ben10_banner.jpg" alt="welcome banner" />
+```
+
+```html
+<!-- code-add-start -->
+<img
+  sizes="(max-width: 1364px) 100vw, 1364px"
+  srcset="
+    ./img/ben10_banner_f7cqbr_c_scale,w_200.jpg   200w,
+    ./img/ben10_banner_f7cqbr_c_scale,w_954.jpg   954w,
+    ./img/ben10_banner_f7cqbr_c_scale,w_1364.jpg 1364w
+  "
+  src="./img/ben10_banner_f7cqbr_c_scale,w_1364.jpg"
+  alt="welcome banner"
+/>
+<!-- code-add-end -->
+```
+
+We need to do this for the remaining 3 images
+
+```html
+<!--  Images Section  -->
+<section class="images">
+  <!-- code-remove-start -->
+  <img src="./img/accelerator.png" alt="ben10 accelerator" />
+  <img src="./img/diamond.png" alt="ben10 diamond" />
+  <img src="./img/four_arms.png" alt="ben10 four arms" />
+  <!-- code-remove-end -->
+</section>
+```
+
+```html
+<!--  Images Section  -->
+<section class="images">
+  <!-- code-add-start -->
+  <img
+    sizes="(max-width: 728px) 100vw, 728px"
+    srcset="
+      ./img/accelerator_kcs7jx_c_scale,w_200.png 200w,
+      ./img/accelerator_kcs7jx_c_scale,w_510.png 510w,
+      ./img/accelerator_kcs7jx_c_scale,w_728.png 728w
+    "
+    src="accelerator_vntgmg_c_scale,w_728.png"
+    alt="ben10 accelerator"
+  />
+  <img
+    sizes="(max-width: 690px) 100vw, 690px"
+    srcset="
+      ./img/diamond_kpgqiq_c_scale,w_200.png 200w,
+      ./img/diamond_kpgqiq_c_scale,w_488.png 488w,
+      ./img/diamond_kpgqiq_c_scale,w_690.png 690w
+    "
+    src="diamond_kyejdd_c_scale,w_690.png"
+    alt="ben10 diamond"
+  />
+  <img
+    sizes="(max-width: 736px) 100vw, 736px"
+    srcset="
+      ./img/four_arms_fe1q1i_c_scale,w_200.png 200w,
+      ./img/four_arms_fe1q1i_c_scale,w_517.png 517w,
+      ./img/four_arms_fe1q1i_c_scale,w_736.png 736w
+    "
+    src="four_arms_fe1q1i_c_scale,w_736.png"
+    alt="ben10 four arms"
+  />
+  <!-- code-add-end -->
+</section>
+```
+
+With this setup, the browser will dynamically use appropriate images for different devices depending on screen size, network speed etc.
+
+Code so far — [Github](https://github.com/kasboi/ben10_project/tree/project-105.5)
+
+## References
+
+1. W3schools - [Media Queries](https://www.w3schools.com/css/css3_mediaqueries.asp)
+2. MDN - [Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+3. MDN - [Lazy loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)

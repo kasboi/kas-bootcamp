@@ -3,7 +3,7 @@ sidebar_position: 1
 title: CSS Intro
 ---
 
-import HtmlOutput from "@site/src/components/HtmlOutput"
+import HtmlOutput from "@site/src/components/HtmlOutput";
 
 ## CSS — Cascading Style Sheet
 
@@ -21,29 +21,29 @@ Syntax are the rules of writing proper CSS
 
 ```html
 <style>
-    p {
-        color: hotpink;
-        border: 2px solid teal;
-    }
+  p {
+    color: hotpink;
+    border: 2px solid teal;
+  }
 </style>
 
 <h1>Introduction to CSS</h1>
 <p>
-    Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum non
-    congue nullam. Molestie quisque consequat faucibus mattis taciti vehicula
-    ornare maecenas nascetur magnis ligula nec.
+  Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum non
+  congue nullam. Molestie quisque consequat faucibus mattis taciti vehicula
+  ornare maecenas nascetur magnis ligula nec.
 </p>
 ```
 
 ### Output
 
 <HtmlOutput>
-    <h1>Introduction to CSS</h1>
-    <p style={{ color: "hotpink", border: "2px solid teal" }}>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum
-        non congue nullam. Molestie quisque consequat faucibus mattis taciti
-        vehicula ornare maecenas nascetur magnis ligula nec.
-    </p>
+  <h1>Introduction to CSS</h1>
+  <p style={{ color: "hotpink", border: "2px solid teal" }}>
+    Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum non
+    congue nullam. Molestie quisque consequat faucibus mattis taciti vehicula
+    ornare maecenas nascetur magnis ligula nec.
+  </p>
 </HtmlOutput>
 
 ### Code Breakdown
@@ -55,55 +55,55 @@ Syntax are the rules of writing proper CSS
 
 ## Class Selectors
 
--   First attach a class to an element via `class` attribute.
--   An element can have multiple classes.
--   Select classes in CSS by prefixing the class name with a `.`
+- First attach a class to an element via `class` attribute.
+- An element can have multiple classes.
+- Select classes in CSS by prefixing the class name with a `.`
 
 ```html
 <style>
-    .warning {
-        color: orange;
-        font-weight: bold;
-    }
+  .warning {
+    color: orange;
+    font-weight: bold;
+  }
 </style>
 
 <p class="warning">This paragraph displays a warning!</p>
 ```
 
 <HtmlOutput>
-    <div class="warning" style={{ color: "orange", fontWeight: "bold" }}>
-        This paragraph displays a warning!
-    </div>
+  <div class="warning" style={{ color: "orange", fontWeight: "bold" }}>
+    This paragraph displays a warning!
+  </div>
 </HtmlOutput>
 
 ## ID Selector
 
--   Attach an ID to an element via `id` attribute.
--   An element should have one unique id
+- Attach an ID to an element via `id` attribute.
+- An element should have one unique id
 
 ```html
 <style>
-    #danger {
-        color: red;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+  #danger {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 </style>
 
 <p id="danger">
-    This text is uppercase, bold, and red, and you better pay attention because
-    you're in danger only once on this web page!
+  This text is uppercase, bold, and red, and you better pay attention because
+  you're in danger only once on this web page!
 </p>
 ```
 
 <HtmlOutput>
-    <div
-        class="warning"
-        style={{ color: "red", fontWeight: "bold", textTransform: "uppercase" }}
-    >
-        This text is uppercase, bold, and red, and you better pay attention
-        because you're in danger only once on this web page!
-    </div>
+  <div
+    class="warning"
+    style={{ color: "red", fontWeight: "bold", textTransform: "uppercase" }}
+  >
+    This text is uppercase, bold, and red, and you better pay attention because
+    you're in danger only once on this web page!
+  </div>
 </HtmlOutput>
 
 ## Descendant Selectors
@@ -112,26 +112,26 @@ This is a combination of one or more classes, IDs, or elements, separated by spa
 
 ```html
 <style>
-    .warning p {
-        color: violet;
-    }
+  .warning p {
+    color: violet;
+  }
 </style>
 
 <article class="warning">
-    <p>All paragraphs in this article will have a color of violet.</p>
-    <p>This paragraph too! No more classes needed!</p>
+  <p>All paragraphs in this article will have a color of violet.</p>
+  <p>This paragraph too! No more classes needed!</p>
 </article>
 ```
 
 <HtmlOutput>
-    <article class="warning">
-        <p style={{ color: "violet" }}>
-            All paragraphs in this article will have a color of violet.
-        </p>
-        <p style={{ color: "violet" }}>
-            This paragraph too! No more classes needed!
-        </p>
-    </article>
+  <article class="warning">
+    <p style={{ color: "violet" }}>
+      All paragraphs in this article will have a color of violet.
+    </p>
+    <p style={{ color: "violet" }}>
+      This paragraph too! No more classes needed!
+    </p>
+  </article>
 </HtmlOutput>
 
 ## Grouping Selectors
@@ -140,53 +140,53 @@ You can pick multiple selectors and apply the same styling to them at once.
 
 ```html
 <style>
-    h1,
-    h2 {
-        color: green;
-    }
+  h1,
+  h2 {
+    color: green;
+  }
 </style>
 
 <article>
-    <h1>This heading is green</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum
-        non congue nullam.
-    </p>
-    <h2>This heading is also green</h2>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum
-        non congue nullam.
-    </p>
+  <h1>This heading is green</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum non
+    congue nullam.
+  </p>
+  <h2>This heading is also green</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum non
+    congue nullam.
+  </p>
 </article>
 ```
 
 <HtmlOutput>
-    <article>
-        <h1 style={{ color: "green" }}>This heading is green</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae
-            cum non congue nullam.
-        </p>
-        <h2 style={{ color: "green" }}>This heading is also green</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae
-            cum non congue nullam.
-        </p>
-    </article>
+  <article>
+    <h1 style={{ color: "green" }}>This heading is green</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum
+      non congue nullam.
+    </p>
+    <h2 style={{ color: "green" }}>This heading is also green</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipiscing elit, ornare vitae cum
+      non congue nullam.
+    </p>
+  </article>
 </HtmlOutput>
 
-We have other ways of selecting elements such as combinator, pseudo-class, pseudo-elements and attribute selectors. We would touch upon them as we work on projects.
+We have other ways of selecting elements such as combinator, pseudo-class, pseudo-elements and attribute selectors. We will touch upon them as we work on projects.
 
 ## Importing Extrnal Stylesheets
 
-We've seen how to use the `style` attributes and `<style>` tags for applying styles but the most common one we would be using is the external stylesheet. To use external stylesheets, create a new file and give it a `.css` extension. Example: `style.css`
+We've seen how to use the `style` attributes and `<style>` tags for applying styles but the most common one we will be using is the external stylesheet. To use external stylesheets, create a new file and give it a `.css` extension. Example: `style.css`
 
 To direct the browser to use the stylesheet, you need to specify its location within the `<head>` element using the `<link>` tag.
 
 ```html
 <!-- Some code -->
 <head>
-    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <!-- Some code -->
 ```
@@ -198,8 +198,8 @@ Just like in HTML, we can have comments within our CSS styles which do not get p
 ```css
 /* This comment gets ignored by the browser */
 p {
-    color: chocolate;
-    background-color: hotpink;
+  color: chocolate;
+  background-color: hotpink;
 }
 /* Comments are useful for code documentation */
 ```

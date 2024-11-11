@@ -6,29 +6,61 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #6C63FF;
-  --ifm-color-primary-dark: #5D55E8;
-  --ifm-color-primary-darker: #4D47CC;
-  --ifm-color-primary-darkest: #3D3AAA;
-  --ifm-color-primary-light: #7B72FF;
-  --ifm-color-primary-lighter: #8B82FF;
-  --ifm-color-primary-lightest: #A19BFF;
+  --ifm-color-primary: #6c63ff;
+  --ifm-color-primary-dark: #5d55e8;
+  --ifm-color-primary-darker: #4d47cc;
+  --ifm-color-primary-darkest: #3d3aaa;
+  --ifm-color-primary-light: #7b72ff;
+  --ifm-color-primary-lighter: #8b82ff;
+  --ifm-color-primary-lightest: #a19bff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #6C63FF;
-  --ifm-color-primary-dark: #5D55E8;
-  --ifm-color-primary-darker: #4D47CC;
-  --ifm-color-primary-darkest: #3D3AAA;
-  --ifm-color-primary-light: #7B72FF;
-  --ifm-color-primary-lighter: #8B82FF;
-  --ifm-color-primary-lightest: #A19BFF;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1); /* Lighter background for highlighted code lines in dark mode */
+[data-theme="dark"] {
+  --ifm-color-primary: #6c63ff;
+  --ifm-color-primary-dark: #5d55e8;
+  --ifm-color-primary-darker: #4d47cc;
+  --ifm-color-primary-darkest: #3d3aaa;
+  --ifm-color-primary-light: #7b72ff;
+  --ifm-color-primary-lighter: #8b82ff;
+  --ifm-color-primary-lightest: #a19bff;
+  --docusaurus-highlighted-code-line-bg: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Lighter background for highlighted code lines in dark mode */
 }
 
 /* Enable word wrapping in code blocks */
 code {
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.token-line {
+  margin-bottom: 5px;
+}
+
+.code-block-line-removed,
+.code-block-line-added {
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 1px var(--ifm-pre-padding);
+  display: block;
+}
+
+.code-block-line-removed {
+  background-color: #c92a2a55;
+}
+
+.code-block-line-added {
+  background-color: #2b8a3e55;
+}
+
+.code-block-line-removed::before {
+  content: "-";
+}
+
+.code-block-line-added::before {
+  content: "+";
 }

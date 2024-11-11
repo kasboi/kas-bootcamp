@@ -1,0 +1,155 @@
+---
+sidebar_postion: 10
+title: "Project 106 - Media Queries"
+---
+
+There are 2 main approaches towards responsive design, mobile first or desktop first.
+
+If you choose a mobile first approach, you begin the development and layout with mobile screens in mind and then work your way up with tablet, desktop and other large screen devices.
+
+Desktop approach begins with developing for large screens first and then working your way down by modifying your layout at different smaller breakpoints.
+
+Our Ben10 project has been using a desktop approach so far. What we would do now is pick some breakpoints and ensure that our layout is perfect for those range of breakpoints.
+
+## Project Continuation
+
+The breakpoints I have chosen are: `1024px`, `768px`, `600px` and `480px`. There would be gaps in the project for screen sizes that are not properly covered, so I implore you to go further than these limited breakpoints when we are done to ensure your project is fully responsive and accessible.
+
+## `max-width: 1024px`
+
+```css
+@media screen and (max-width: 1024px) {
+  .banner .welcome {
+    font-size: 4.5rem;
+    padding: 2rem;
+    top: 35%;
+  }
+
+  section.images {
+    padding: 3rem 0;
+    background-image: url("./img/ben10_background_m7zx9p_c_scale\,w_1212.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  section.images img {
+    width: 28rem;
+  }
+}
+```
+
+### Breakdown
+
+- `@media screen and (max-width: 1024px)`- Media query definition that targets screen sizes from `1024px` and below.
+- `.banner .welcome` - The font-size and paddings are reduced to fit the text content properly on the screen, the `top` property is also increased to bring the positioned element further down.
+- `section.images` - responsive images are implemented in our css too!,the [responsivebreakpoint](https://www.responsivebreakpoints.com/) tool is used to generate various background images for our breakpoints. This gives an added benefit of reduced file size. When the user visits our website from a device with a screen size of 1024 or lower, a smaller image is downloaded and used as the background image in the images section.
+  - `background-repeat: no-repeat` disables background image being repeated.
+  - `background-attachment: scroll` ensures the image scrolls with the rest of the section.
+- `section.images img` - The width of the images are reduced to fit all three on a row. This might not be an ideal technique, but we would get into proper ways of doing responsive images with css layouts (grid & flexbox) later on.
+
+## `max-width: 768px`
+
+```css
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  nav ul li {
+    flex-basis: 45%;
+  }
+
+  section.images {
+    background-image: url("./img/ben10_background_m7zx9p_c_scale\,w_843.png");
+  }
+
+  section.images img {
+    width: 20rem;
+  }
+}
+```
+
+### Breakdown
+
+- `@media screen and (max-width: 768px)` - Targets screen sizes of `768px` and below. The styles defined here will override any conflicting one defined in the `1024px` query because of css cacade. Therefore, writing your media queries in a proper order is important.
+- `.nav ul` - This element uses flexbox for layout
+  - `flex-wrap: wrap;` - A flexbox property that allows the child elements to break to the next line/row if there's not enough space on the initial row.
+  - `gap: 3rem;` - Adds gap to the row and columns between the elements
+- `nav ul li { flex-basis: 45%; }` - A flexbox property for defining the space taken by each of the child elements in the flexbox container.
+- `section.images {  background-image: url("./img/ben10_background_m7zx9p_c_scale\,w_843.png"); }` - A smaller image for this range of devices, reduces bandwith used.
+- `section.images img { width: 20rem; }` - Reduces the width of the images to fit on a row.
+
+## `max-width: 600px`
+
+```css
+@media screen and (max-width: 600px) {
+  .banner .welcome {
+    position: static;
+    color: initial;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4fce3;
+  }
+  section.images img {
+    width: 16rem;
+  }
+}
+```
+
+### Breakdown
+
+- `.banner .welcome` - Here, we restore the element to its default position, colour and reduced the font-size
+  - `position: static` - This resets the element from position absolute to its default position (static)
+  - `color: initial;` - The [initial](https://developer.mozilla.org/en-US/docs/Web/CSS/initial) value resets any property to its default value. Yes, we could have used it to reset the element position.
+
+## `max-width: 480px`
+
+```css
+@media screen and (max-width: 480px) {
+  header {
+    position: static;
+  }
+
+  nav {
+    position: static;
+  }
+
+  nav ul li {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  article h2 {
+    font-size: 3.5rem;
+  }
+
+  article p {
+    font-size: 1.6rem;
+  }
+
+  section.images img {
+    width: 10rem;
+  }
+
+  section.newsletter {
+    padding: 4rem 2rem;
+  }
+  section.newsletter p {
+    font-size: 1.6rem;
+  }
+}
+```
+
+### Breakdown
+
+- `header { position: static }` - Resets element position, therefore disabling fixed positioning
+- `nav { position: static }` - Resets element position, therefore disabling sticky positioning
+- `nav ul li { flex-basis: 100%; text-align: center; }` - each element takes up the entire width of a row.
+- `article h2` & `article p` - Reduced font-size to make content look better.
+- `section.images img { width: 10rem; }` - Reduced the width of the images to fit on a single row.
+- ` section.newsletter` - Reduced top and bottom paddings to give content enough space.
+- `section.newsletter p` - Reduced font-size to make content look better.
+
+Complete code can be found here — [Github](https://github.com/kasboi/ben10_project/tree/project-106)

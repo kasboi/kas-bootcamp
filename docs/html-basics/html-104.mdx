@@ -3,8 +3,8 @@ sidebar_position: 5
 title: HTML 1-04
 ---
 
-import HtmlOutput from "@site/src/components/HtmlOutput"
-import dog1 from "./img/cute_dog.jpg"
+import HtmlOutput from "@site/src/components/HtmlOutput";
+import dog1 from "./img/cute_dog.jpg";
 
 ## ID and Classes
 
@@ -28,53 +28,53 @@ To do this, you need to give the element you want to navigate to a unique `id` a
 
 ```html showLineNumbers {6-7,47-48}
 <body>
-    <!--This is a comment -->
-    <!-- Introduction section - A bit about myself -->
-    <!-- CTRL + / is the shortcut for adding or removing comments -->
-    <h1>About Me</h1>
-    <!-- Unique id attribute -->
-    <h2 id="intro">Introduction</h2>
-    <p>
-        Hi, I'm Erron Black, a passionate web developer. I love creating
-        websites that are both functional and aesthetically pleasing.
-    </p>
-    <p>
-        I've been coding for over 5 years, and I've worked with a variety of
-        languages, but my favorite by far is HTML because it is the foundation
-        of the web.
-    </p>
-    <h2>My Philosophy</h2>
-    <blockquote>
-        "The best way to predict the future is to invent it." - Alan Kay
-    </blockquote>
-    <h2>My Articles</h2>
-    <!-- ul>li*4 -->
-    <ul>
-        <li>How to create a signup form</li>
-        <li>Simple recipe page</li>
-        <li>State and capitale in Nigeria</li>
-        <li>Travel Destination</li>
-        <li>
-            <a href="chapter.html" target="_top">Book Chapter</a>
-        </li>
-    </ul>
-    <!-- HTML Links -->
-    <h2>HTML Links</h2>
-    <p>
-        <a href="https://google.com"
-            >This entire text will take you to the Google homepage</a
-        >
-    </p>
-    <p>This <a href="https://wikipedia.com">link</a> takes you to wikipedia.</p>
-    <h2>Random Images of Puppies</h2>
-    <img src="./img/dog1.jpg" alt="An image of a puppy" />
-    <img
-        src="https://images.dog.ceo/breeds/ovcharka-caucasian/IMG_20191125_161809.jpg"
-        alt="An image of a dog"
-    />
-    <img src="#" alt="Unrendered picture" />
-    <!-- Anchor tag links to the h2 element -->
-    <p>This <a href="#intro">link</a> takes you to the Introduction section</p>
+  <!--This is a comment -->
+  <!-- Introduction section - A bit about myself -->
+  <!-- CTRL + / is the shortcut for adding or removing comments -->
+  <h1>About Me</h1>
+  <!-- Unique id attribute -->
+  <h2 id="intro">Introduction</h2>
+  <p>
+    Hi, I'm Erron Black, a passionate web developer. I love creating websites
+    that are both functional and aesthetically pleasing.
+  </p>
+  <p>
+    I've been coding for over 5 years, and I've worked with a variety of
+    languages, but my favorite by far is HTML because it is the foundation of
+    the web.
+  </p>
+  <h2>My Philosophy</h2>
+  <blockquote>
+    "The best way to predict the future is to invent it." - Alan Kay
+  </blockquote>
+  <h2>My Articles</h2>
+  <!-- ul>li*4 -->
+  <ul>
+    <li>How to create a signup form</li>
+    <li>Simple recipe page</li>
+    <li>State and capitale in Nigeria</li>
+    <li>Travel Destination</li>
+    <li>
+      <a href="chapter.html" target="_top">Book Chapter</a>
+    </li>
+  </ul>
+  <!-- HTML Links -->
+  <h2>HTML Links</h2>
+  <p>
+    <a href="https://google.com"
+      >This entire text will take you to the Google homepage</a
+    >
+  </p>
+  <p>This <a href="https://wikipedia.com">link</a> takes you to wikipedia.</p>
+  <h2>Random Images of Puppies</h2>
+  <img src="./img/dog1.jpg" alt="An image of a puppy" />
+  <img
+    src="https://images.dog.ceo/breeds/ovcharka-caucasian/IMG_20191125_161809.jpg"
+    alt="An image of a dog"
+  />
+  <img src="#" alt="Unrendered picture" />
+  <!-- Anchor tag links to the h2 element -->
+  <p>This <a href="#intro">link</a> takes you to the Introduction section</p>
 </body>
 ```
 
@@ -134,12 +134,12 @@ To do this, you need to give the element you want to navigate to a unique `id` a
 
 ### `class`
 
-We use classes to identify multiple one or multiple elements. Unlike `id`, we can apply a single class to multiple elements. We would delve more into this when we start styling our elements
+We use classes to identify multiple one or multiple elements. Unlike `id`, we can apply a single class to multiple elements. We will delve more into this when we start styling our elements
 
 ```html
 <div class="container">
-    <h2>Section Title</h2>
-    <p>This is a paragraph inside a div with the "container" class.</p>
+  <h2>Section Title</h2>
+  <p>This is a paragraph inside a div with the "container" class.</p>
 </div>
 ```
 
@@ -151,19 +151,19 @@ We use classes to identify multiple one or multiple elements. Unlike `id`, we ca
 
 ```html
 <div style="background-color: lightblue; padding: 10px;">
-    <h1>This is a Heading inside a div</h1>
-    <p>This is a paragraph inside a div.</p>
+  <h1>This is a Heading inside a div</h1>
+  <p>This is a paragraph inside a div.</p>
 </div>
 ```
 
 <details>
-    <summary>Toggle me!</summary>
-    <HtmlOutput>
-        <div style={{ backgroundColor: "lightblue", padding: "10px" }}>
-            <h1>This is a Heading inside a div</h1>
-            <p>This is a paragraph inside a div.</p>
-        </div>
-    </HtmlOutput>
+  <summary>Toggle me!</summary>
+  <HtmlOutput>
+    <div style={{ backgroundColor: "lightblue", padding: "10px" }}>
+      <h1>This is a Heading inside a div</h1>
+      <p>This is a paragraph inside a div.</p>
+    </div>
+  </HtmlOutput>
 </details>
 
 `span`: An inline element used to wrap small portions of text or inline content within a larger element, such as within a paragraph. It doesn’t cause a line break and only takes up as much width as its content.
@@ -172,17 +172,17 @@ We use classes to identify multiple one or multiple elements. Unlike `id`, we ca
 
 ```html
 <p>
-    This is a normal paragraph with
-    <span style="color: red;">some red text</span> inside it.
+  This is a normal paragraph with
+  <span style="color: red;">some red text</span> inside it.
 </p>
 ```
 
 <details>
-    <summary>Toggle me!</summary>
-    <HtmlOutput>
-        <p>
-            This is a normal paragraph with{" "}
-            <span style={{ color: "red" }}>some red text</span> inside it.
-        </p>
-    </HtmlOutput>
+  <summary>Toggle me!</summary>
+  <HtmlOutput>
+    <p>
+      This is a normal paragraph with{" "}
+      <span style={{ color: "red" }}>some red text</span> inside it.
+    </p>
+  </HtmlOutput>
 </details>

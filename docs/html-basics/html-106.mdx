@@ -3,7 +3,7 @@ sidebar_position: 8
 title: HTML Styles
 ---
 
-import HtmlOutput from "@site/src/components/HtmlOutput"
+import HtmlOutput from "@site/src/components/HtmlOutput";
 
 ## HTML Styles
 
@@ -21,30 +21,30 @@ Styling format - `property: value;`
 
 ```html
 <p style="padding: 20px; background-color: dodgerblue">
-    I am a paragraph text with a teal color
+  I am a paragraph text with a teal color
 </p>
 <p style="color: yellow; background-color: black">
-    I am a paragraph text with a yellow text color and black background
+  I am a paragraph text with a yellow text color and black background
 </p>
 ```
 
 ### Output
 
 <details>
-    <summary>Toggle me!</summary>
-    <HtmlOutput>
-        <p
-            style={{
-                backgroundColor: "dodgerblue",
-                padding: "20px",
-            }}
-        >
-            I am a paragraph text with a teal color
-        </p>
-        <p style={{ color: "yellow", backgroundColor: "black" }}>
-            I am a paragraph text with a yellow text color and black background
-        </p>
-    </HtmlOutput>
+  <summary>Toggle me!</summary>
+  <HtmlOutput>
+    <p
+      style={{
+        backgroundColor: "dodgerblue",
+        padding: "20px",
+      }}
+    >
+      I am a paragraph text with a teal color
+    </p>
+    <p style={{ color: "yellow", backgroundColor: "black" }}>
+      I am a paragraph text with a yellow text color and black background
+    </p>
+  </HtmlOutput>
 </details>
 
 We will delve deeper into various styling properties later on.
@@ -53,35 +53,35 @@ We will delve deeper into various styling properties later on.
 
 HTML supports using predefined colour names (140 in total), RGB, RGBA, HEX, HSL or HSLA values.
 
-For the most in this course, we would be using the first four (4)
+For the most in this course, we will be using the first four (4)
 
 ### Examples
 
 ```html showLineNumbers
 <!-- Color names -->
 <p style="color: white, background-color: dodgerblue">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit, id metus hac
-    fringilla mollis per.
+  Lorem ipsum dolor sit amet consectetur adipiscing elit, id metus hac fringilla
+  mollis per.
 </p>
 <!-- RGB Color -->
 <p style="color: rgb(255, 0, 0); background-color: rgb(0, 0, 0);">
-    This paragraph uses RGB color format for text and background.
+  This paragraph uses RGB color format for text and background.
 </p>
 
 <!-- RGBA Color with transparency -->
 <p style="color: rgba(0, 128, 0, 1); background-color: rgba(255, 255, 0, 0.5);">
-    This paragraph uses RGBA color format for text and a semi-transparent
-    background.
+  This paragraph uses RGBA color format for text and a semi-transparent
+  background.
 </p>
 
 <!-- HEX Color -->
 <p style="color: #0000FF; background-color: #FFFF00;">
-    This paragraph uses HEX color format for text and background.
+  This paragraph uses HEX color format for text and background.
 </p>
 
 <!-- RGB for text and HEX for background -->
 <p style="color: rgb(255, 165, 0); background-color: #8A2BE2;">
-    This paragraph uses RGB for text and HEX for background color.
+  This paragraph uses RGB for text and HEX for background color.
 </p>
 ```
 
@@ -103,25 +103,25 @@ For the most in this course, we would be using the first four (4)
 {/* RGBA Color with transparency */}
 
 <p
-    style={{
-        color: "rgba(0, 128, 0, 1)",
-        backgroundColor: "rgba(255, 255, 0, 0.5)",
-    }}
+  style={{
+    color: "rgba(0, 128, 0, 1)",
+    backgroundColor: "rgba(255, 255, 0, 0.5)",
+  }}
 >
-    This paragraph uses RGBA color format for text and a semi-transparent
-    background.
+  This paragraph uses RGBA color format for text and a semi-transparent
+  background.
 </p>
 
 {/* HEX Color */}
 
 <p style={{ color: "#0000FF", backgroundColor: "#FFFF00" }}>
-    This paragraph uses HEX color format for text and background.
+  This paragraph uses HEX color format for text and background.
 </p>
 
 {/* RGB for text and HEX for background */}
 
 <p style={{ color: "rgb(255, 165, 0)", backgroundColor: "#8A2BE2" }}>
-    This paragraph uses RGB for text and HEX for background color.
+  This paragraph uses RGB for text and HEX for background color.
 </p>
 
     </HtmlOutput>
@@ -129,4 +129,5 @@ For the most in this course, we would be using the first four (4)
 </details>
 
 ## References
+
 [Open Color](https://yeun.github.io/open-color/) - Highly recommend for picking colours
