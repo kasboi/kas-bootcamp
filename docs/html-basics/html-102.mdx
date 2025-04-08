@@ -22,30 +22,33 @@ We begin the project by introducing headings which are mostly used for titles. W
   <summary>Toggle me!</summary>
 
 <HTMLOutput>
-    <h1>Heading 1...</h1>
-    <h2>Heading 2...</h2>
-    <h3>Heading 3...</h3>
-    <h4>Heading 4...</h4>
-    <h5>Heading 5...</h5>
-    <h6>Heading 6...</h6>
+  <h1>Heading 1...</h1>
+  <h2>Heading 2...</h2>
+  <h3>Heading 3...</h3>
+  <h4>Heading 4...</h4>
+  <h5>Heading 5...</h5>
+  <h6>Heading 6...</h6>
 </HTMLOutput>
 
 </details>
 
 Now, lets use this tag in our project
 
-```html title="/html_basics/index.html" showLineNumbers {6,9-10}
+```html title="/html_basics/index.html" {6,9-10}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About Me - HTML Blog</title>
-    </head>
-    <body>
-        <h1>About Me</h1>
-        <h2>Introduction</h2>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    // hightlight-next-line
+    <title>About Me - HTML Blog</title>
+  </head>
+  <body>
+    // hightlight-start
+    <h1>About Me</h1>
+    <h2>Introduction</h2>
+    // hightlight-end
+  </body>
 </html>
 ```
 
@@ -59,32 +62,32 @@ Used where breaks in lines are critical: Poem, address, etc.
 
 ```html
 <p>
-    Line of poem<br />
-    Another line of the poem
+  Line of poem<br />
+  Another line of the poem
 </p>
 ```
 
-```html title="/html_basics/index.html" showLineNumbers {11-19}
+```html title="/html_basics/index.html"  {11-19}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About Me - HTML Blog</title>
-    </head>
-    <body>
-        <h1>About Me</h1>
-        <h2>Introduction</h2>
-        <p>
-            Hi, I'm Erron Black, a passionate web developer. I love creating
-            websites that are both functional and aesthetically pleasing.
-        </p>
-        <p>
-            I've been coding for over 5 years, and I've worked with a variety of
-            languages, but my favorite by far is HTML because it is the
-            foundation of the web.
-        </p>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - HTML Blog</title>
+  </head>
+  <body>
+    <h1>About Me</h1>
+    <h2>Introduction</h2>
+    <p>
+      Hi, I'm Erron Black, a passionate web developer. I love creating websites
+      that are both functional and aesthetically pleasing.
+    </p>
+    <p>
+      I've been coding for over 5 years, and I've worked with a variety of
+      languages, but my favorite by far is HTML because it is the foundation of
+      the web.
+    </p>
+  </body>
 </html>
 ```
 
@@ -92,31 +95,31 @@ Used where breaks in lines are critical: Poem, address, etc.
 
 `<blockquote>` defines a quote from an external source
 
-```html title="/html_basics/index.html" showLineNumbers {20-23}
+```html title="/html_basics/index.html"  {20-23}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About Me - HTML Blog</title>
-    </head>
-    <body>
-        <h1>About Me</h1>
-        <h2>Introduction</h2>
-        <p>
-            Hi, I'm Erron Black, a passionate web developer. I love creating
-            websites that are both functional and aesthetically pleasing.
-        </p>
-        <p>
-            I've been coding for over 5 years, and I've worked with a variety of
-            languages, but my favorite by far is HTML because it is the
-            foundation of the web.
-        </p>
-        <h2>My Philosophy</h2>
-        <blockquote>
-            "The best way to predict the future is to invent it." - Alan Kay
-        </blockquote>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - HTML Blog</title>
+  </head>
+  <body>
+    <h1>About Me</h1>
+    <h2>Introduction</h2>
+    <p>
+      Hi, I'm Erron Black, a passionate web developer. I love creating websites
+      that are both functional and aesthetically pleasing.
+    </p>
+    <p>
+      I've been coding for over 5 years, and I've worked with a variety of
+      languages, but my favorite by far is HTML because it is the foundation of
+      the web.
+    </p>
+    <h2>My Philosophy</h2>
+    <blockquote>
+      "The best way to predict the future is to invent it." - Alan Kay
+    </blockquote>
+  </body>
 </html>
 ```
 
@@ -155,21 +158,21 @@ To answer this, we need to understand that there are people who visit websites i
 Also, if you want the page to rank higher on search engine results, you need to properly apply tags so that the page comes up in appropriate search queries.
 
 export const HTMLOutput = ({ children }) => {
-    return (
-        <div
-            style={{
-                padding: "10px 5px",
-                borderRadius: "6px",
-                border: "2px solid #dee2e6",
-                backgroundColor: "white",
-                color: "black",
-            }}
-        >
-            {children}
-        </div>
-    )
-}
+  return (
+    <div
+      style={{
+        padding: "10px 5px",
+        borderRadius: "6px",
+        border: "2px solid #dee2e6",
+        backgroundColor: "white",
+        color: "black",
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 export const Blockquote = ({ children }) => {
-    return <blockquote style={{ color: "black" }}>{children}</blockquote>
-}
+  return <blockquote style={{ color: "black" }}>{children}</blockquote>;
+};

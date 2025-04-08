@@ -5,7 +5,7 @@ title: "Project 102"
 
 We have a problem. The fixed `header` is nowhere to be found and the reason is simple, both the `header` and the `.banner` section are positioned and occupy overlaping space. Currently, the banner section is placed on top of the header, the solution is to specify which positioned element would be placed on the other and the property for that is `z-index`
 
-```css showLineNumbers {10}
+```css {10}
 /* CSS styles */
 header {
   color: #fff;
@@ -25,7 +25,7 @@ By giving the `header` a higher z-index, it is placed on the `.banner` section.
 
 ## Nav links & pseudo-classes
 
-```css showLineNumbers {5-6,9-12}
+```css {5-6,9-12}
 nav ul {
   display: flex;
   justify-content: space-between;

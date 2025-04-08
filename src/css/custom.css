@@ -13,6 +13,7 @@
   --ifm-color-primary-light: #7b72ff;
   --ifm-color-primary-lighter: #8b82ff;
   --ifm-color-primary-lightest: #a19bff;
+  --docusaurus-highlighted-code-line-bg: rgb(72, 77, 91);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -24,12 +25,7 @@
   --ifm-color-primary-light: #7b72ff;
   --ifm-color-primary-lighter: #8b82ff;
   --ifm-color-primary-lightest: #a19bff;
-  --docusaurus-highlighted-code-line-bg: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Lighter background for highlighted code lines in dark mode */
+  --docusaurus-highlighted-code-line-bg: rgb(100, 100, 100);
 }
 
 /* Enable word wrapping in code blocks */

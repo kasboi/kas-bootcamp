@@ -3,7 +3,7 @@ sidebar_position: 6
 title: HTML Forms
 ---
 
-import HtmlOutput from "@site/src/components/HtmlOutput"
+import HtmlOutput from "@site/src/components/HtmlOutput";
 
 ## Form and Input Tags
 
@@ -33,15 +33,15 @@ Here, we create a new form for collecting survey data about our bootcamp.
 
 Create the standard HTML boiler code by using emmet shortcut `!` and set title to `Survey Form`
 
-```html showLineNumbers {6}
+```html {6}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Survey Form</title>
-    </head>
-    <body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+  </head>
+  <body></body>
 </html>
 ```
 
@@ -51,13 +51,13 @@ The `form` element is the appropriate container for all form inputs.
 
 ```html
 <body>
-    <div>
-        <h1 id="title">CareerConnects Survey Form</h1>
-        <p id="description">
-            Thank you for taking the time to help us improve the plaform
-        </p>
-    </div>
-    <form id="survey-form"></form>
+  <div>
+    <h1 id="title">CareerConnects Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the plaform
+    </p>
+  </div>
+  <form id="survey-form"></form>
 </body>
 ```
 
@@ -67,25 +67,25 @@ Form inputs are used to specify the type of data to be collected ranging from te
 
 ```html title="/html_basics/survey.html" {10-19}
 <body>
-    <div>
-        <h1 id="title">CareerConnects Survey Form</h1>
-        <p id="description">
-            Thank you for taking the time to help us improve the plaform
-        </p>
+  <div>
+    <h1 id="title">CareerConnects Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the plaform
+    </p>
+  </div>
+  <form id="survey-form">
+    <!-- Name Input -->
+    <div class="form-class">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form_input"
+        placeholder="Enter your name"
+        required
+      />
     </div>
-    <form id="survey-form">
-        <!-- Name Input -->
-        <div class="form-class">
-            <label for="name">Name</label>
-            <input
-                type="text"
-                id="name"
-                class="form_input"
-                placeholder="Enter your name"
-                required
-            />
-        </div>
-    </form>
+  </form>
 </body>
 ```
 
@@ -95,35 +95,35 @@ Form inputs are used to specify the type of data to be collected ranging from te
 2. `<label for="name">` is used to provide a relationship between a text and an input. The `name` attribute links to the `id` of the input
 3. `<input type="text" />` - The text input is used for gathering plain text data.
 
--   `id="name"` - Unique identifier for the input which allows the label to know which element to focus on when clicked
--   `class="form_input"` - This class name will be applied to multiple inputs which will use the same styling later on in the course.
--   `placeholder="Enter your name"` - The placeholder is a text shown in the input which is cleared immediatelly the use enters data into it
--   `required` - This tells the browser that the input field field is important and must be filled before submission
+- `id="name"` - Unique identifier for the input which allows the label to know which element to focus on when clicked
+- `class="form_input"` - This class name will be applied to multiple inputs which will use the same styling later on in the course.
+- `placeholder="Enter your name"` - The placeholder is a text shown in the input which is cleared immediatelly the use enters data into it
+- `required` - This tells the browser that the input field field is important and must be filled before submission
 
-```html title="/html_basics/survey.html" showLineNumbers {14-23}
+```html title="/html_basics/survey.html"  {14-23}
 <form id="survey-form">
-    <!-- Name Input -->
-    <div class="form-class">
-        <label for="name">Name</label>
-        <input
-            type="text"
-            id="name"
-            class="form_input"
-            placeholder="Enter your name"
-            required
-        />
-    </div>
-    <!-- Email Input -->
-    <div class="form-class">
-        <label for="email">E-mail</label>
-        <input
-            type="email"
-            id="email"
-            class="form_input"
-            placeholder="Enter your email"
-            required
-        />
-    </div>
+  <!-- Name Input -->
+  <div class="form-class">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form_input"
+      placeholder="Enter your name"
+      required
+    />
+  </div>
+  <!-- Email Input -->
+  <div class="form-class">
+    <label for="email">E-mail</label>
+    <input
+      type="email"
+      id="email"
+      class="form_input"
+      placeholder="Enter your email"
+      required
+    />
+  </div>
 </form>
 ```
 
@@ -133,34 +133,34 @@ Form inputs are used to specify the type of data to be collected ranging from te
 
 ### Dropdown
 
-```html title="/html_basics/survey.html" showLineNumbers {19-25}
+```html title="/html_basics/survey.html"  {19-25}
 <form id="survey-form">
-    <!-- Some code above -->
-    <!-- Age [minimum of 18 and maximum of 75] -->
-    <div class="form-class">
-        <label for="age">Age</label>
-        <input
-            type="number"
-            id="age"
-            class="form_input"
-            placeholder="Input your age"
-            min="18"
-            max="75"
-            required
-        />
-    </div>
-    <!-- Dropdwon menu -->
-    <div class="form-class">
-        <p>Which option best describes your current role?</p>
-        <select name="dropdwon" id="dropdown" class="form_input">
-            <!-- The first option should have an emtpy value for the required attribute to work -->
-            <option value="" disabled selected>Select your role</option>
-            <option value="student">Student</option>
-            <option value="full-time">Full-time</option>
-            <option value="part-time">Part-time</option>
-            <option value="others">Others</option>
-        </select>
-    </div>
+  <!-- Some code above -->
+  <!-- Age [minimum of 18 and maximum of 75] -->
+  <div class="form-class">
+    <label for="age">Age</label>
+    <input
+      type="number"
+      id="age"
+      class="form_input"
+      placeholder="Input your age"
+      min="18"
+      max="75"
+      required
+    />
+  </div>
+  <!-- Dropdwon menu -->
+  <div class="form-class">
+    <p>Which option best describes your current role?</p>
+    <select name="dropdwon" id="dropdown" class="form_input">
+      <!-- The first option should have an emtpy value for the required attribute to work -->
+      <option value="" disabled selected>Select your role</option>
+      <option value="student">Student</option>
+      <option value="full-time">Full-time</option>
+      <option value="part-time">Part-time</option>
+      <option value="others">Others</option>
+    </select>
+  </div>
 </form>
 ```
 
@@ -170,28 +170,28 @@ Form inputs are used to specify the type of data to be collected ranging from te
 2. `min` and `max` attributes are used to specify the minimum and maximum number values allowed
 3. The dropdown menu is special because it uses a unique tag `select` and `option`
 
--   `<select>` is the container. The `name` attribute is used when sending the form data to the server to identify the input and its value
--   `<option>` tags are used to list the values within the dropdown
--   `value` attribute is the value sent to the server along with the name of the input
--   `disabled` attribute makes it so that the option cannot be selected by the user
--   `selected` is used to control the default value selected within the dropdown, the user can change this
+- `<select>` is the container. The `name` attribute is used when sending the form data to the server to identify the input and its value
+- `<option>` tags are used to list the values within the dropdown
+- `value` attribute is the value sent to the server along with the name of the input
+- `disabled` attribute makes it so that the option cannot be selected by the user
+- `selected` is used to control the default value selected within the dropdown, the user can change this
 
 ### Radio buttons
 
 ```html
 <!-- Radio Buttons -->
 <div class="form-class">
-    <p>Would you recommend CareerConnects to a friend?</p>
-    <input type="radio" value="definitely" id="definitely" class="form_radio" />
-    <label for="definitely">Definitely</label>
-    <!-- Break line -->
-    <br />
-    <input type="radio" value="maybe" id="maybe" class="form_radio" />
-    <label for="maybe">Maybe</label>
-    <!-- Break line -->
-    <br />
-    <input type="radio" value="nah" id="nah" class="form_radio" />
-    <label for="nah">Nah</label>
+  <p>Would you recommend CareerConnects to a friend?</p>
+  <input type="radio" value="definitely" id="definitely" class="form_radio" />
+  <label for="definitely">Definitely</label>
+  <!-- Break line -->
+  <br />
+  <input type="radio" value="maybe" id="maybe" class="form_radio" />
+  <label for="maybe">Maybe</label>
+  <!-- Break line -->
+  <br />
+  <input type="radio" value="nah" id="nah" class="form_radio" />
+  <label for="nah">Nah</label>
 </div>
 ```
 
@@ -201,32 +201,32 @@ Form inputs are used to specify the type of data to be collected ranging from te
 2. Requires a `name` attribute to link related buttons
 3. `<br />` to split buttons into new lines
 
-```html showLineNumbers {6,16,24}
+```html {6,16,24}
 <!-- Radio Buttons -->
 <div class="form-class">
-    <p>Would you recommend CareerConnects to a friend?</p>
-    <input
-        type="radio"
-        name="option"
-        value="definitely"
-        id="definitely"
-        class="form_radio"
-    />
-    <label for="definitely">Definitely</label>
-    <!-- Break line -->
-    <br />
-    <input
-        type="radio"
-        name="option"
-        value="maybe"
-        id="maybe"
-        class="form_radio"
-    />
-    <label for="maybe">Maybe</label>
-    <!-- Break line -->
-    <br />
-    <input type="radio" name="option" value="nah" id="nah" class="form_radio" />
-    <label for="nah">Nah</label>
+  <p>Would you recommend CareerConnects to a friend?</p>
+  <input
+    type="radio"
+    name="option"
+    value="definitely"
+    id="definitely"
+    class="form_radio"
+  />
+  <label for="definitely">Definitely</label>
+  <!-- Break line -->
+  <br />
+  <input
+    type="radio"
+    name="option"
+    value="maybe"
+    id="maybe"
+    class="form_radio"
+  />
+  <label for="maybe">Maybe</label>
+  <!-- Break line -->
+  <br />
+  <input type="radio" name="option" value="nah" id="nah" class="form_radio" />
+  <label for="nah">Nah</label>
 </div>
 ```
 
@@ -235,14 +235,14 @@ Form inputs are used to specify the type of data to be collected ranging from te
 ```html
 <!-- Dropdown -->
 <div class="form-class">
-    <p>What is your favourite feature of CareerConnects?</p>
-    <select name="dropdown" id="dropdown" class="form_input">
-        <option value="role" disabled selected>Pick one</option>
-        <option value="challenges">challenges</option>
-        <option value="projects">projects</option>
-        <option value="community">community</option>
-        <option value="open-source">open source</option>
-    </select>
+  <p>What is your favourite feature of CareerConnects?</p>
+  <select name="dropdown" id="dropdown" class="form_input">
+    <option value="role" disabled selected>Pick one</option>
+    <option value="challenges">challenges</option>
+    <option value="projects">projects</option>
+    <option value="community">community</option>
+    <option value="open-source">open source</option>
+  </select>
 </div>
 ```
 
@@ -253,39 +253,39 @@ Checkboxes are used to provide limited values to the user, from which they can s
 ```html
 <!-- Checkbox -->
 <div class="form-class">
-    <p>What would you like to see improved? (Check all that apply?)</p>
-    <input
-        type="checkbox"
-        id="front"
-        class="form_check"
-        name="front"
-        value="front"
-    />
-    <label for="front">Front-end Projects</label>
-    <input
-        type="checkbox"
-        id="back"
-        class="form_check"
-        name="back"
-        value="back"
-    />
-    <label for="back">Back-end Projects</label>
-    <input
-        type="checkbox"
-        id="data_science"
-        class="form_check"
-        name="data_science"
-        value="data_science"
-    />
-    <label for="data_science">Data Science</label>
-    <input
-        type="checkbox"
-        id="project"
-        class="form_check"
-        name="project"
-        value="project"
-    />
-    <label for="project">Project Management</label>
+  <p>What would you like to see improved? (Check all that apply?)</p>
+  <input
+    type="checkbox"
+    id="front"
+    class="form_check"
+    name="front"
+    value="front"
+  />
+  <label for="front">Front-end Projects</label>
+  <input
+    type="checkbox"
+    id="back"
+    class="form_check"
+    name="back"
+    value="back"
+  />
+  <label for="back">Back-end Projects</label>
+  <input
+    type="checkbox"
+    id="data_science"
+    class="form_check"
+    name="data_science"
+    value="data_science"
+  />
+  <label for="data_science">Data Science</label>
+  <input
+    type="checkbox"
+    id="project"
+    class="form_check"
+    name="project"
+    value="project"
+  />
+  <label for="project">Project Management</label>
 </div>
 ```
 
@@ -301,14 +301,14 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
 ```html
 <!-- Textarea input -->
 <div class="form-class">
-    <textarea
-        name="text"
-        id="textarea"
-        cols="30"
-        rows="6"
-        class="form_input"
-        placeholder="Enter your comments here"
-    ></textarea>
+  <textarea
+    name="text"
+    id="textarea"
+    cols="30"
+    rows="6"
+    class="form_input"
+    placeholder="Enter your comments here"
+  ></textarea>
 </div>
 ```
 
@@ -327,8 +327,8 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
 ```html
 <!-- Submit & Reset buttons -->
 <div class="form-class">
-    <input type="submit" value="Submit" class="form_submit" />
-    <input type="reset" value="Reset" class="form_reset" />
+  <input type="submit" value="Submit" class="form_submit" />
+  <input type="reset" value="Reset" class="form_reset" />
 </div>
 ```
 
@@ -336,174 +336,174 @@ Alows you to accept long form of plain text input from the user. It is a flexibl
 
 ```html
 <body>
-    <div>
-        <h1 id="title">CareerConnects Survey Form</h1>
-        <p id="description">
-            Thank you for taking the time to help us improve the plaform
-        </p>
+  <div>
+    <h1 id="title">CareerConnects Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the plaform
+    </p>
+  </div>
+  <form id="survey-form">
+    <!-- Name Input -->
+    <div class="form-class">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form_input"
+        placeholder="Enter your name"
+        required
+      />
     </div>
-    <form id="survey-form">
-        <!-- Name Input -->
-        <div class="form-class">
-            <label for="name">Name</label>
-            <input
-                type="text"
-                id="name"
-                class="form_input"
-                placeholder="Enter your name"
-                required
-            />
-        </div>
-        <!-- Email Input -->
-        <div class="form-class">
-            <label for="email">E-mail</label>
-            <input
-                type="email"
-                id="email"
-                class="form_input"
-                placeholder="Enter your email"
-                required
-            />
-        </div>
-        <!-- Age [minimum of 18 and maximum of 75] -->
-        <div class="form-class">
-            <label for="age">Age</label>
-            <input
-                type="number"
-                id="age"
-                class="form_input"
-                placeholder="Input your age"
-                min="18"
-                max="75"
-                required
-            />
-        </div>
-        <!-- Dropdwon menu -->
-        <div class="form-class">
-            <p>Which option best describes your current role?</p>
-            <select name="dropdwon" id="dropdown" class="form_input">
-                <!-- The first option should have an emtpy value for the required attribute to work -->
-                <option value="" disabled selected>Select your role</option>
-                <option value="student">Student</option>
-                <option value="full-time">Full-time</option>
-                <option value="part-time">Part-time</option>
-                <option value="others">Others</option>
-            </select>
-        </div>
-        <!-- Radio Buttons -->
-        <div class="form-class">
-            <p>Would you recommend CareerConnects to a friend?</p>
-            <input
-                type="radio"
-                value="definitely"
-                name="option"
-                id="definitely"
-                class="form_radio"
-            />
-            <label for="definitely">Definitely</label>
-            <!-- Break line -->
-            <br />
-            <input
-                type="radio"
-                value="maybe"
-                name="option"
-                id="maybe"
-                class="form_radio"
-            />
-            <label for="maybe">Maybe</label>
-            <!-- Break line -->
-            <br />
-            <input
-                type="radio"
-                value="nah"
-                name="option"
-                id="nah"
-                class="form_radio"
-            />
-            <label for="nah">Nah</label>
-        </div>
-        <!-- Dropdown -->
-        <div class="form-class">
-            <p>What is your favourite feature of CareerConnects?</p>
-            <select name="dropdown" id="dropdown" class="form_input">
-                <option value="" disabled selected>Pick one</option>
-                <option value="challenges">challenges</option>
-                <option value="projects">projects</option>
-                <option value="community">community</option>
-                <option value="open-source">open source</option>
-            </select>
-        </div>
-        <!-- Checkbox -->
-        <div class="form-class">
-            <p>What would you like to see improved? (Check all that apply)</p>
-            <label for="front" class="form-class_label">
-                <input
-                    type="checkbox"
-                    id="front"
-                    class="form_check"
-                    name="front"
-                    value="front"
-                />
-                Front-end Projects
-            </label>
-            <label for="back" class="form-class_label">
-                <input
-                    type="checkbox"
-                    id="back"
-                    class="form_check"
-                    name="back"
-                    value="back"
-                />
-                Back-end Projects
-            </label>
-            <label for="data_visualization" class="form-class_label">
-                <input
-                    type="checkbox"
-                    class="form_check"
-                    name="data_visualization"
-                    value="data_visualization"
-                    id="data_visualization"
-                />
-                Data Visualization
-            </label>
-            <label for="challenges" class="form-class_label">
-                <input
-                    type="checkbox"
-                    class="form_check"
-                    name="challenges"
-                    value="challenges"
-                    id="challenges"
-                />
-                Challenges
-            </label>
-            <label for="open" class="form-class_label">
-                <input
-                    type="checkbox"
-                    class="form_check"
-                    name="open"
-                    value="open"
-                    id="open"
-                />
-                Open Source Communities
-            </label>
-        </div>
-        <!-- Textarea input -->
-        <div class="form-class">
-            <textarea
-                name="text"
-                id="textarea"
-                cols="30"
-                rows="6"
-                class="form_input"
-                placeholder="Enter your comments here"
-            ></textarea>
-        </div>
-        <!-- Submit & Reset buttons -->
-        <div class="form-class">
-            <input type="submit" value="Submit" class="form_submit" />
-            <input type="reset" value="Reset" class="form_reset" />
-        </div>
-    </form>
+    <!-- Email Input -->
+    <div class="form-class">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        class="form_input"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <!-- Age [minimum of 18 and maximum of 75] -->
+    <div class="form-class">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        id="age"
+        class="form_input"
+        placeholder="Input your age"
+        min="18"
+        max="75"
+        required
+      />
+    </div>
+    <!-- Dropdwon menu -->
+    <div class="form-class">
+      <p>Which option best describes your current role?</p>
+      <select name="dropdwon" id="dropdown" class="form_input">
+        <!-- The first option should have an emtpy value for the required attribute to work -->
+        <option value="" disabled selected>Select your role</option>
+        <option value="student">Student</option>
+        <option value="full-time">Full-time</option>
+        <option value="part-time">Part-time</option>
+        <option value="others">Others</option>
+      </select>
+    </div>
+    <!-- Radio Buttons -->
+    <div class="form-class">
+      <p>Would you recommend CareerConnects to a friend?</p>
+      <input
+        type="radio"
+        value="definitely"
+        name="option"
+        id="definitely"
+        class="form_radio"
+      />
+      <label for="definitely">Definitely</label>
+      <!-- Break line -->
+      <br />
+      <input
+        type="radio"
+        value="maybe"
+        name="option"
+        id="maybe"
+        class="form_radio"
+      />
+      <label for="maybe">Maybe</label>
+      <!-- Break line -->
+      <br />
+      <input
+        type="radio"
+        value="nah"
+        name="option"
+        id="nah"
+        class="form_radio"
+      />
+      <label for="nah">Nah</label>
+    </div>
+    <!-- Dropdown -->
+    <div class="form-class">
+      <p>What is your favourite feature of CareerConnects?</p>
+      <select name="dropdown" id="dropdown" class="form_input">
+        <option value="" disabled selected>Pick one</option>
+        <option value="challenges">challenges</option>
+        <option value="projects">projects</option>
+        <option value="community">community</option>
+        <option value="open-source">open source</option>
+      </select>
+    </div>
+    <!-- Checkbox -->
+    <div class="form-class">
+      <p>What would you like to see improved? (Check all that apply)</p>
+      <label for="front" class="form-class_label">
+        <input
+          type="checkbox"
+          id="front"
+          class="form_check"
+          name="front"
+          value="front"
+        />
+        Front-end Projects
+      </label>
+      <label for="back" class="form-class_label">
+        <input
+          type="checkbox"
+          id="back"
+          class="form_check"
+          name="back"
+          value="back"
+        />
+        Back-end Projects
+      </label>
+      <label for="data_visualization" class="form-class_label">
+        <input
+          type="checkbox"
+          class="form_check"
+          name="data_visualization"
+          value="data_visualization"
+          id="data_visualization"
+        />
+        Data Visualization
+      </label>
+      <label for="challenges" class="form-class_label">
+        <input
+          type="checkbox"
+          class="form_check"
+          name="challenges"
+          value="challenges"
+          id="challenges"
+        />
+        Challenges
+      </label>
+      <label for="open" class="form-class_label">
+        <input
+          type="checkbox"
+          class="form_check"
+          name="open"
+          value="open"
+          id="open"
+        />
+        Open Source Communities
+      </label>
+    </div>
+    <!-- Textarea input -->
+    <div class="form-class">
+      <textarea
+        name="text"
+        id="textarea"
+        cols="30"
+        rows="6"
+        class="form_input"
+        placeholder="Enter your comments here"
+      ></textarea>
+    </div>
+    <!-- Submit & Reset buttons -->
+    <div class="form-class">
+      <input type="submit" value="Submit" class="form_submit" />
+      <input type="reset" value="Reset" class="form_reset" />
+    </div>
+  </form>
 </body>
 ```
 
